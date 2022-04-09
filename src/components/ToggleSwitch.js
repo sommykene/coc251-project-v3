@@ -1,19 +1,40 @@
-import React, { useState } from "react";
-import { color } from "../assets/colors/colors";
+import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { color } from "@assets/colors/colors";
+import "./stylesheet.css";
 
 function ToggleSwitch() {
-  const [language, setLanguage] = useState({
-    en: true,
-    enig: false,
-    ig: false,
-  });
+  const { t, i18n } = useTranslation("common");
 
+  const [language, setLanguage] = useState("enig");
+
+  useEffect(() => {
+    handleLanguageChange(language);
+  }, []);
+
+  const handleLanguageChange = (lang) => {
+    // const lang = e.target.value;
+    setLanguage(lang);
+    i18n.changeLanguage(lang);
+  };
   return (
     <div style={styles.container}>
       <div style={styles.toggle}>
-        <span style={styles.dot}></span>
-        <span style={styles.active}></span>
-        <span style={styles.dot}></span>
+        <Radio
+          selected={language === "en"}
+          value="en"
+          onChange={(lang) => handleLanguageChange(lang)}
+        />
+        <Radio
+          selected={language === "enig"}
+          value="enig"
+          onChange={(lang) => handleLanguageChange(lang)}
+        />
+        <Radio
+          selected={language === "ig"}
+          value="ig"
+          onChange={(lang) => handleLanguageChange(lang)}
+        />
       </div>
       <div style={styles.lang}>
         <span>EN</span>
@@ -23,6 +44,17 @@ function ToggleSwitch() {
     </div>
   );
 }
+
+const Radio = ({ selected, onChange, value }) => {
+  return (
+    <div
+      onClick={() => {
+        onChange(value);
+      }}
+      className={`lang-radio ${selected && "selected-lang-radio"}`}
+    />
+  );
+};
 
 const styles = {
   container: {

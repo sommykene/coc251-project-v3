@@ -1,0 +1,11 @@
+.lang-radio {
+  height: 15px;
+  width: 15px;
+  border: 1px #000 solid;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.selected-lang-radio {
+  background-color: #000;
+}
