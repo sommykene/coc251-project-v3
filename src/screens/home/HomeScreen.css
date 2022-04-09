@@ -1,0 +1,39 @@
+#homescreen {
+  display: flex;
+  flex-direction: column;
+}
+
+#homescreen .rowone,
+#homescreen .rowtwo {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+#homescreen > div {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+#homescreen .rowone > div > div {
+  height: 100%;
+}
+
+#homescreen .rowtwo > div > div {
+  height: 100%;
+}
+
+.section-cards {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px 0;
+}
