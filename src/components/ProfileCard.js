@@ -29,7 +29,6 @@ const XpPointCard = () => {
 const styles = {
   card: {
     backgroundColor: "white",
-    width: "15vw", // temp
     position: "relative",
     borderRadius: "10px",
     boxShadow: "5px 10px 18px rgba(0, 0, 0, 0.2)",
@@ -38,6 +37,7 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     paddingBottom: "15px",
+    height: "100%",
   },
   logo: {
     position: "absolute",
