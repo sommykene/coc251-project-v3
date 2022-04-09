@@ -12,7 +12,7 @@ import WordOfTheDayCard from "./componenets/WordOfTheDayCard";
 
 function HomeScreen() {
   return (
-    <div id="homescreen">
+    <div id="homescreen" className="balsamiq-ig">
       {/* ROWONE */}
       <div style={{ marginBottom: "30px" }} className="rowone">
         {/* Profile */}
