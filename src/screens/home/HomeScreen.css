@@ -20,26 +20,6 @@
   height: 100%;
 }
 
-#homescreen .rowone > div > div {
-  height: 100%;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-}
-
-#homescreen .rowtwo > div > div {
-  height: 100%;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-}
-
-/* #homescreen .rowone > div > div:hover {
-  opacity: 70%;
-  cursor: pointer;
-} */
-
-/* #homescreen .rowtwo > div > div:hover {
-  opacity: 80%;
-  cursor: pointer;
-} */
-
 .section-cards {
   border-radius: 10px;
   display: flex;
@@ -48,4 +28,10 @@
   align-items: center;
   text-align: center;
   padding: 20px 0;
+  height: 100%;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+a {
+  text-decoration: none;
 }
