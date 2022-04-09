@@ -1,14 +1,14 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import ProfileCard from "@components/ProfileCard";
+import ProfileCard from "../../components/ProfileCard";
 
-import LearnIcon from "@assets/images/icons/learn_icon_large.png";
-import PracticeIcon from "@assets/images/icons/practice_icon_large.png";
-import VocabIcon from "@assets/images/icons/vocab_icon_large.png";
-import CultureIcon from "@assets/images/icons/culture_icon_large.png";
+import LearnIcon from "../../assets/images/icons/learn_icon_large.png";
+import PracticeIcon from "../../assets/images/icons/practice_icon_large.png";
+import VocabIcon from "../../assets/images/icons/vocab_icon_large.png";
+import CultureIcon from "../../assets/images/icons/culture_icon_large.png";
 
-import { color } from "@assets/colors/colors";
+import { color } from "../../assets/colors/colors";
 import "./HomeScreen.css";
 import WordOfTheDayCard from "./componenets/WordOfTheDayCard";
 

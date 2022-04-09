@@ -1,7 +1,7 @@
 import { format } from "date-fns";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { color } from "@assets/colors/colors";
+import { color } from "../../../assets/colors/colors";
 
 function WordOfTheDayCard() {
   const igbo = "ifunanya";
