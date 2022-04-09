@@ -3,17 +3,32 @@ import React from "react";
 import { color } from "../../../assets/colors/colors";
 
 function WordOfTheDayCard() {
+  const igbo = "ifunanya";
+  const wordlength = igbo.length;
+
   return (
     <div style={styles.wotd}>
       <span>Word Of The Day</span>
       <br />
-      <p style={{ margin: "10px 0" }}>{format(new Date(), "MMM d, yyyy")}</p>
+      <p style={{ margin: "6px 0" }}>{format(new Date(), "MMM d, yyyy")}</p>
       <div style={styles.breakline}></div>
-      <p style={styles.igbo}>Kedu ka i mere</p>
-      <br />
-      <p style={styles.english}>how are you doing</p>
-      <br />
-      <p style={styles.definition}>an intense feeling of deep affection</p>
+      <div style={styles.section}>
+        <p
+          style={{
+            margin: "10px 0",
+            fontSize:
+              wordlength < 10
+                ? "60px"
+                : wordlength > 10 && wordlength < 15
+                ? "50px"
+                : "40px",
+          }}
+        >
+          {igbo}
+        </p>
+        <p style={styles.english}>Love</p>
+        <p style={styles.definition}>an intense feeling of deep affection</p>
+      </div>
     </div>
   );
 }
@@ -32,8 +47,22 @@ const styles = {
     width: "60%",
     margin: "auto",
   },
-  igbo: { fontSize: "100%", margin: "10px 0" },
-  english: { color: color.orange, fontSize: "30px", margin: 0 },
-  definition: { color: color.darkgrey, fontSize: "20px", margin: "10px" },
+  section: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    height: "80%",
+    paddingTop: "10px",
+  },
+  english: {
+    color: color.orange,
+    fontSize: "26px",
+    margin: 0,
+  },
+  definition: {
+    color: color.darkgrey,
+    fontSize: "16px",
+    margin: "10px",
+  },
 };
 export default WordOfTheDayCard;
