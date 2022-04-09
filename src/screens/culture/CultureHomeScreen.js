@@ -4,7 +4,7 @@ import { color } from "../../assets/colors/colors";
 import NavigationCard from "../../components/NavigationCard";
 import ProfileCard from "../../components/ProfileCard";
 
-function PracticeHomeScreen() {
+function CultureHomeScreen() {
   const { t, i18n } = useTranslation("common");
 
   return (
@@ -12,12 +12,12 @@ function PracticeHomeScreen() {
       <div style={{ flex: 1 }}>
         <ProfileCard />
         <br />
-        <NavigationCard page={"practice"} />
+        <NavigationCard page={"culture"} />
       </div>
 
       {/* MAIN BODY */}
       <div style={{ flex: 4 }}>
-        <span className="pagetitle balsamiq-ig">{t("practice")}</span>
+        <span className="pagetitle balsamiq-ig">{t("culture")}</span>
         <div
           style={{
             display: "flex",
@@ -31,4 +31,4 @@ function PracticeHomeScreen() {
   );
 }
 
-export default PracticeHomeScreen;
+export default CultureHomeScreen;
