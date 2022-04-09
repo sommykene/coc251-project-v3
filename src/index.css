@@ -25,7 +25,7 @@ code {
 @font-face {
   font-family: "BalsamiqIgbo";
   src: local("BalsamiqIgbo"),
-    url("./assets/fonts/Balsamiq_igbo-Regular.otf") format("opentype");
+    url("./assets/fonts/BalsamiqSans-Regular-Igbo.otf") format("opentype");
 }
 
 .balsamiq {

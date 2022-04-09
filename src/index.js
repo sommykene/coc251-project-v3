@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import "./index.css";
-import "./assets/fonts/Balsamiq_igbo-Regular.otf";
+import "./assets/fonts/BalsamiqSans-Regular-Igbo.otf";
 import "./assets/fonts/BalsamiqSans-Regular.ttf";
 
 ReactDOM.render(
