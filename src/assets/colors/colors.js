@@ -1,10 +1,8 @@
 export const color = {
-  mono: {
-    white: "#FFFFFF",
-    lightgrey: "#DBDBDB",
-    darkgrey: "#707070",
-    black: "#000000",
-  },
+  white: "#FFFFFF",
+  lightgrey: "#DBDBDB",
+  darkgrey: "#707070",
+  black: "#000000",
   background: "#E9EDF0",
   duckegg: "#9EDBD7",
   teal: "#4E9B95",

@@ -38,7 +38,7 @@ const styles = {
   dot: {
     height: "15px",
     width: "15px",
-    border: `1px ${color.mono.black} solid`,
+    border: `1px ${color.black} solid`,
     borderRadius: "50%",
     display: "inline-block",
   },
@@ -47,7 +47,7 @@ const styles = {
     width: "15px",
     borderRadius: "50%",
     display: "inline-block",
-    backgroundColor: color.mono.black,
+    backgroundColor: color.black,
   },
   lang: {
     display: "flex",
