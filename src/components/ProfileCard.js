@@ -6,7 +6,7 @@ import ToggleSwitch from "./ToggleSwitch";
 
 function ProfileCard() {
   return (
-    <div style={styles.card} className="balsamiq">
+    <div style={styles.card} className="card balsamiq">
       <img style={styles.logo} src={logo} />
       <img style={styles.profileImage} src={profileImage} />
       <span style={{ margin: "10px 0" }}>Som E-Agwuegbo</span>
@@ -28,16 +28,9 @@ const XpPointCard = () => {
 
 const styles = {
   card: {
-    backgroundColor: "white",
-    position: "relative",
-    borderRadius: "10px",
-    boxShadow: "0px 0px 5px rgba(0, 0, 0, 0.2)",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
     paddingBottom: "15px",
-    height: "100%",
+    height: "350px",
+    alignItems: "center",
   },
   logo: {
     position: "absolute",
