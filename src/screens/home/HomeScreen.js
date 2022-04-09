@@ -11,6 +11,7 @@ import CultureIcon from "../../assets/images/icons/culture_icon_large.png";
 import { color } from "../../assets/colors/colors";
 import "./HomeScreen.css";
 import WordOfTheDayCard from "./componenets/WordOfTheDayCard";
+import { Link } from "react-router-dom";
 
 function HomeScreen() {
   const { t, i18n } = useTranslation("common");
@@ -26,29 +27,38 @@ function HomeScreen() {
 
         {/* learn */}
         <div style={{ flex: 2 }}>
-          <div
-            style={{ backgroundColor: color.teal }}
-            className="section-cards"
-          >
-            <img style={{ height: "150px", width: "150px" }} src={LearnIcon} />
-            <span style={{ fontSize: "24pt", color: "white" }}>
-              {t("learn")}
-            </span>
-          </div>
+          <Link to="/learn">
+            <div
+              style={{ backgroundColor: color.teal }}
+              className="section-cards"
+            >
+              <img
+                style={{ height: "150px", width: "150px" }}
+                src={LearnIcon}
+              />
+              <span style={{ fontSize: "24pt", color: color.white }}>
+                {t("learn")}
+              </span>
+            </div>
+          </Link>
         </div>
 
         {/* Practice */}
         <div style={{ flex: 2 }}>
-          <div
-            style={{ backgroundColor: color.duckegg }}
-            className="section-cards"
-          >
-            <img
-              style={{ height: "150px", width: "150px" }}
-              src={PracticeIcon}
-            />
-            <span style={{ fontSize: "24pt" }}>{t("practice")}</span>
-          </div>
+          <Link to="/learn">
+            <div
+              style={{ backgroundColor: color.duckegg }}
+              className="section-cards"
+            >
+              <img
+                style={{ height: "150px", width: "150px" }}
+                src={PracticeIcon}
+              />
+              <span style={{ fontSize: "24pt", color: color.black }}>
+                {t("practice")}
+              </span>
+            </div>
+          </Link>
         </div>
       </div>
 
@@ -56,13 +66,20 @@ function HomeScreen() {
       <div className="rowtwo">
         {/* vocabulary */}
         <div style={{ flex: 2 }}>
-          <div
-            style={{ backgroundColor: color.yellow }}
-            className="section-cards"
-          >
-            <img style={{ height: "150px", width: "150px" }} src={VocabIcon} />
-            <span style={{ fontSize: "24pt" }}>{t("vocab")}</span>
-          </div>
+          <Link to="/learn">
+            <div
+              style={{ backgroundColor: color.yellow }}
+              className="section-cards"
+            >
+              <img
+                style={{ height: "150px", width: "150px" }}
+                src={VocabIcon}
+              />
+              <span style={{ fontSize: "24pt", color: color.black }}>
+                {t("vocab")}
+              </span>
+            </div>
+          </Link>
         </div>
 
         {/* word of the day */}
@@ -72,15 +89,20 @@ function HomeScreen() {
 
         {/* culture */}
         <div style={{ flex: 2 }}>
-          <div style={{ backgroundColor: color.red }} className="section-cards">
-            <img
-              style={{ height: "150px", width: "150px" }}
-              src={CultureIcon}
-            />
-            <span style={{ fontSize: "24pt", color: "white" }}>
-              {t("culture")}
-            </span>
-          </div>
+          <Link to="/learn">
+            <div
+              style={{ backgroundColor: color.red }}
+              className="section-cards"
+            >
+              <img
+                style={{ height: "150px", width: "150px" }}
+                src={CultureIcon}
+              />
+              <span style={{ fontSize: "24pt", color: color.white }}>
+                {t("culture")}
+              </span>
+            </div>
+          </Link>
         </div>
       </div>
     </div>

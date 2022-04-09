@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { color } from "../assets/colors/colors";
 import logo from "../assets/images/logo.svg";
 import profileImage from "../assets/images/profile.png";
@@ -7,7 +8,9 @@ import ToggleSwitch from "./ToggleSwitch";
 function ProfileCard() {
   return (
     <div style={styles.card} className="card balsamiq">
-      <img style={styles.logo} src={logo} />
+      <Link to="/">
+        <img style={styles.logo} src={logo} />
+      </Link>
       <img style={styles.profileImage} src={profileImage} />
       <span style={{ margin: "10px 0" }}>Som E-Agwuegbo</span>
       <span>@sommykene</span>

@@ -1,7 +1,8 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { createRoot } from "react-dom/client";
 import App from "./App";
+import { BrowserRouter as Router } from "react-router-dom";
+
 import "./index.css";
 import "./assets/fonts/BalsamiqSans-Regular-Igbo.otf";
 import "./assets/fonts/BalsamiqSans-Regular.ttf";
@@ -33,8 +34,10 @@ const container = document.getElementById("root");
 const root = createRoot(container);
 root.render(
   <React.StrictMode>
-    <I18nextProvider i18n={i18next}>
-      <App />
-    </I18nextProvider>
+    <Router>
+      <I18nextProvider i18n={i18next}>
+        <App />
+      </I18nextProvider>
+    </Router>
   </React.StrictMode>
 );
