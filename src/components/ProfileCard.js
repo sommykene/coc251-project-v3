@@ -1,7 +1,7 @@
 import React from "react";
-import { color } from "../assets/colors/colors";
-import logo from "../assets/images/logo.svg";
-import profileImage from "../assets/images/profile.png";
+import { color } from "@assets/colors/colors";
+import logo from "@assets/images/logo.svg";
+import profileImage from "@assets/images/profile.png";
 import ToggleSwitch from "./ToggleSwitch";
 
 function ProfileCard() {

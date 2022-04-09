@@ -1,16 +1,21 @@
 import { format } from "date-fns";
 import React from "react";
-import { color } from "../../../assets/colors/colors";
+import { useTranslation } from "react-i18next";
+import { color } from "@assets/colors/colors";
 
 function WordOfTheDayCard() {
   const igbo = "ifunanya";
   const wordlength = igbo.length;
 
+  const { t, i18n } = useTranslation("common");
+
   return (
     <div style={styles.wotd}>
-      <span>Word Of The Day</span>
+      <span>{t("wotd")}</span>
       <br />
-      <p style={{ margin: "6px 0" }}>{format(new Date(), "MMM d, yyyy")}</p>
+      <p style={{ margin: "6px 0" }} className="calibri">
+        {format(new Date(), "MMM d, yyyy")}
+      </p>
       <div style={styles.breakline}></div>
       <div style={styles.section}>
         <p
