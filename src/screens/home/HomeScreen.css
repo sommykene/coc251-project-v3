@@ -30,6 +30,16 @@
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
 }
 
+/* #homescreen .rowone > div > div:hover {
+  opacity: 70%;
+  cursor: pointer;
+} */
+
+/* #homescreen .rowtwo > div > div:hover {
+  opacity: 80%;
+  cursor: pointer;
+} */
+
 .section-cards {
   border-radius: 10px;
   display: flex;
