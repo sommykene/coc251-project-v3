@@ -10,6 +10,6 @@ export const color = {
   teal: "#4E9B95",
   yellow: "#FFD62F",
   orange: "#FF8801",
-  pink: "#D12E2E",
+  red: "#D12E2E",
   green: "#008751",
 };
