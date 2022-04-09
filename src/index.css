@@ -4,13 +4,7 @@
 
 body {
   margin: 0;
-  font-family: Calibri,
-  Candara,
-  Segoe,
-  Segoe UI,
-  Optima,
-  Arial,
-  sans-serif;
+  font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #e9edf0;
@@ -18,7 +12,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
