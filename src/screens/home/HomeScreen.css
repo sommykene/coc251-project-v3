@@ -22,10 +22,12 @@
 
 #homescreen .rowone > div > div {
   height: 100%;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
 }
 
 #homescreen .rowtwo > div > div {
   height: 100%;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
 }
 
 .section-cards {

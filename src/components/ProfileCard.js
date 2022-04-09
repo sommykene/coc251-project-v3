@@ -31,7 +31,7 @@ const styles = {
     backgroundColor: "white",
     position: "relative",
     borderRadius: "10px",
-    boxShadow: "5px 10px 18px rgba(0, 0, 0, 0.2)",
+    boxShadow: "0px 0px 5px rgba(0, 0, 0, 0.2)",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
