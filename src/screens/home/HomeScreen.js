@@ -29,7 +29,7 @@ function HomeScreen() {
         <div style={{ flex: 2 }}>
           <Link to="/learn">
             <div
-              style={{ backgroundColor: color.teal }}
+              style={{ backgroundColor: color.learn }}
               className="section-cards"
             >
               <img
@@ -45,9 +45,9 @@ function HomeScreen() {
 
         {/* Practice */}
         <div style={{ flex: 2 }}>
-          <Link to="/learn">
+          <Link to="/practice">
             <div
-              style={{ backgroundColor: color.duckegg }}
+              style={{ backgroundColor: color.practice }}
               className="section-cards"
             >
               <img
@@ -66,9 +66,9 @@ function HomeScreen() {
       <div className="rowtwo">
         {/* vocabulary */}
         <div style={{ flex: 2 }}>
-          <Link to="/learn">
+          <Link to="/vocab">
             <div
-              style={{ backgroundColor: color.yellow }}
+              style={{ backgroundColor: color.vocab }}
               className="section-cards"
             >
               <img
@@ -89,9 +89,9 @@ function HomeScreen() {
 
         {/* culture */}
         <div style={{ flex: 2 }}>
-          <Link to="/learn">
+          <Link to="/culture">
             <div
-              style={{ backgroundColor: color.red }}
+              style={{ backgroundColor: color.culture }}
               className="section-cards"
             >
               <img
