@@ -2,7 +2,7 @@ import React from "react";
 import Sidebar from "../../components/Sidebar";
 import BottomColorStrip from "../../components/BottomColorStrip";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { icon } from "../../assets/images";
 import { color } from "../../assets/colors/colors";
 import { Spacer } from "../../components/utils";
@@ -34,13 +34,21 @@ function PhrasebooksHomeScreen() {
         <p className="subtitle balsamiq-ig">Phrasebooks</p>
         <Spacer height={"20px"} />
         <div style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
-          <PhrasebookCard />
-          <PhrasebookCard />
-          <PhrasebookCard />
-          <PhrasebookCard />
-          <PhrasebookCard />
-          <PhrasebookCard />
-          <PhrasebookCard />
+          <Link to="/vocab/phrasebooks/1">
+            <PhrasebookCard />
+          </Link>
+          <Link to="/vocab/phrasebooks/1">
+            <PhrasebookCard />
+          </Link>
+          <Link to="/vocab/phrasebooks/1">
+            <PhrasebookCard />
+          </Link>
+          <Link to="/vocab/phrasebooks/1">
+            <PhrasebookCard />
+          </Link>
+          <Link to="/vocab/phrasebooks/1">
+            <PhrasebookCard />
+          </Link>
         </div>
       </div>
     </div>

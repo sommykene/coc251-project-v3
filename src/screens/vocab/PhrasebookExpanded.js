@@ -26,7 +26,7 @@ function PhrasebookExpanded() {
           <img
             style={{ marginRight: "10px", cursor: "pointer" }}
             src={icon.backarrow}
-            onClick={() => navigate("/vocab")}
+            onClick={() => navigate("/vocab/phrasebooks")}
           />
           <span className="pagetitle balsamiq-ig">{t("vocab")}</span>
         </div>

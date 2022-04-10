@@ -12,6 +12,7 @@ function PhrasebookCard() {
         width: "300px",
         padding: "15px",
         cursor: "pointer",
+        color: color.black,
       }}
     >
       <p style={{ margin: 0, fontSize: "18px" }} className="balsamiq-ig">
