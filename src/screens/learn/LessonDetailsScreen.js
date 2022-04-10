@@ -9,7 +9,7 @@ import { lessonsData } from "../../data/lessonsData";
 import DetailsLessonCard from "./components/DetailsLessonCard";
 import DetailsLessonNotesCard from "./components/DetailsLessonNotesCard";
 import DetailsTopicCard from "./components/DetailsTopicCard";
-import ArrowIcon from "../../assets/images/icons/arrow_icon.png";
+import { icon } from "../../assets/images";
 
 function LessonDetailsScreen() {
   const { t, i18n } = useTranslation("common");
@@ -37,7 +37,7 @@ function LessonDetailsScreen() {
           <div>
             <img
               style={{ marginRight: "10px", cursor: "pointer" }}
-              src={ArrowIcon}
+              src={icon.backarrow}
               onClick={() => navigate("/learn")}
             />
             <span className="pagetitle balsamiq-ig">{t("igbolessons")}</span>
