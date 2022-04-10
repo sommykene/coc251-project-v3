@@ -6,6 +6,10 @@ import HomeScreen from "./screens/home/HomeScreen";
 import LearnHomeScreen from "./screens/learn/LearnHomeScreen";
 import LessonDetailsScreen from "./screens/learn/LessonDetailsScreen";
 import PracticeHomeScreen from "./screens/practice/PracticeHomeScreen";
+import DictionaryScreen from "./screens/vocab/DictionaryScreen";
+import LessonsVocab from "./screens/vocab/LessonsVocab";
+import PhrasebookExpanded from "./screens/vocab/PhrasebookExpanded";
+import PhrasebooksHomeScreen from "./screens/vocab/PhrasebooksHomeScreen";
 import VocabHomeScreen from "./screens/vocab/VocabHomeScreen";
 
 function App() {
@@ -46,6 +50,13 @@ const VocabRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<VocabHomeScreen />} />
+      <Route path="dictionary" element={<DictionaryScreen />} />
+      <Route path="lessonsvocab" element={<LessonsVocab />} />
+      <Route path="phrasebooks" element={<PhrasebooksHomeScreen />} />
+      <Route
+        path="phrasebooks/:phrasebookid"
+        element={<PhrasebookExpanded />}
+      />
     </Routes>
   );
 };
