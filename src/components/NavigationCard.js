@@ -47,7 +47,7 @@ function NavigationCard({ page }) {
 }
 
 const styles = {
-  card: {
+  navcard: {
     display: "flex",
     gap: "0px 10px",
     backgroundColor: color.white,
