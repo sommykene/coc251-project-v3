@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { icon } from "../../assets/images";
 import { color } from "../../assets/colors/colors";
 import { Spacer } from "../../components/utils";
+import PhrasebookCard from "./components/PhrasebookCard";
 
 function PhrasebooksHomeScreen() {
   const page = "vocab";
@@ -31,6 +32,16 @@ function PhrasebooksHomeScreen() {
         </div>
         <Spacer height={"20px"} />
         <p className="subtitle balsamiq-ig">Phrasebooks</p>
+        <Spacer height={"20px"} />
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
+          <PhrasebookCard />
+          <PhrasebookCard />
+          <PhrasebookCard />
+          <PhrasebookCard />
+          <PhrasebookCard />
+          <PhrasebookCard />
+          <PhrasebookCard />
+        </div>
       </div>
     </div>
   );
