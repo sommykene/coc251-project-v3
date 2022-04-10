@@ -3,38 +3,51 @@ import { useTranslation } from "react-i18next";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import { color } from "../../../assets/colors/colors";
 
-function LessonCard({ lessonid, title }) {
+function DetailsLessonCard({ lessonid, title, description }) {
   const { t, i18n } = useTranslation("common");
   let params = useParams();
   let [searchParams, setSearchParams] = useSearchParams();
 
   return (
-    <div style={{ height: "70px", padding: "0 30px" }} className="card">
+    <div
+      style={{ height: description ? "100px" : "70px", padding: "0 30px" }}
+      className="card"
+    >
       <div style={styles.main}>
         <p style={styles.lessonsTitle}>{title}</p>
         <div style={styles.buttons} className="balsamiq-ig">
-          <Link
+          <p
             style={
               searchParams.get("tab") !== "viewtopics"
                 ? styles.button
                 : styles.buttonSelected
             }
-            to={`/learn/${lessonid}/details?tab=viewtopics`}
+            onClick={() => {
+              setSearchParams({ tab: "viewtopics" });
+            }}
           >
             {t("viewtopics")}
-          </Link>
-          <Link
+          </p>
+          <p
             style={
               searchParams.get("tab") !== "lessonnotes"
                 ? styles.button
                 : styles.buttonSelected
             }
-            to={`/learn/${lessonid}/details?tab=lessonnotes`}
+            onClick={() => {
+              setSearchParams({ tab: "lessonnotes" });
+            }}
           >
             {t("lessonnotes")}
-          </Link>
+          </p>
         </div>
       </div>
+      {description && (
+        <span style={styles.description}>
+          In this lesson we will be learning how to say basic greetings and
+          introductions
+        </span>
+      )}
     </div>
   );
 }
@@ -77,4 +90,4 @@ const styles = {
   },
 };
 
-export default LessonCard;
+export default DetailsLessonCard;

@@ -5,10 +5,22 @@ import Sidebar from "../../components/Sidebar";
 import { Spacer } from "../../components/utils";
 import LessonCard from "./components/LessonCard";
 import BottomColorStrip from "../../components/BottomColorStrip";
+import { lessonsData } from "../../data/lessonsData";
 
 function LearnHomeScreen() {
   const { t, i18n } = useTranslation("common");
   const page = "learn";
+
+  const lessonCard = lessonsData.map((lessons) => {
+    console.log("hi", lessons);
+    return (
+      <LessonCard
+        key={lessons.lessonid}
+        lessonid={lessons.lessonid}
+        title={lessons.title}
+      />
+    );
+  });
 
   return (
     <div style={{ display: "flex", gap: "30px" }}>
@@ -21,13 +33,7 @@ function LearnHomeScreen() {
       {/* MAIN BODY */}
       <div style={{ flex: 4 }}>
         <span className="pagetitle balsamiq-ig">{t("igbolessons")}</span>
-        <div style={styles.main}>
-          <LessonCard lessonid={"0"} title={"Greeting - Ndewoo"} />
-          <LessonCard lessonid={"1"} title={"Greeting - Ndewoo"} />
-          <LessonCard lessonid={"2"} title={"Greeting - Ndewoo"} />
-          <LessonCard lessonid={"3"} title={"Greeting - Ndewoo"} />
-          <LessonCard lessonid={"4"} title={"Greeting - Ndewoo"} />
-        </div>
+        <div style={styles.main}>{lessonCard}</div>
       </div>
     </div>
   );

@@ -1,19 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { color } from "../../assets/colors/colors";
-import NavigationCard from "../../components/NavigationCard";
-import ProfileCard from "../../components/ProfileCard";
-import LessonCard from "./components/LessonCard";
-import DetailsCard from "./components/DetailsCard";
 import BottomColorStrip from "../../components/BottomColorStrip";
 import { Spacer } from "../../components/utils";
 import Sidebar from "../../components/Sidebar";
-import { useSearchParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
+import { lessonsData } from "../../data/lessonsData";
+import DetailsLessonCard from "./components/DetailsLessonCard";
+import DetailsLessonNotesCard from "./components/DetailsLessonNotesCard";
+import DetailsTopicCard from "./components/DetailsTopicCard";
 
 function LessonDetailsScreen() {
   const { t, i18n } = useTranslation("common");
+  let params = useParams();
   let [searchParams, setSearchParams] = useSearchParams();
   const page = "learn";
+
+  const lesson = lessonsData.find((lesson) => {
+    return lesson.lessonid === params.lessonid;
+  });
+  console.log(lessonsData);
 
   return (
     <div style={{ display: "flex", gap: "30px" }}>
@@ -35,7 +41,10 @@ function LessonDetailsScreen() {
           </span>
         </div>
         <Spacer height="20px" />
-        <LessonCard title={"Greeting - Ndewoo"} description={true} />
+        <DetailsLessonCard
+          title={lesson.title}
+          description={lesson.description}
+        />
         <Spacer height="40px" />
         {/* TABS */}
         <p className="subtitle balsamiq-ig">{t(searchParams.get("tab"))}</p>
@@ -50,18 +59,18 @@ function LessonDetailsScreen() {
         >
           {searchParams.get("tab") !== "lessonnotes" ? (
             <>
-              <DetailsCard title={"Greeting"} page="viewtopics" />
-              <DetailsCard title={"Introduction"} page="viewtopics" />
+              <DetailsTopicCard title={"1. Greeting"} />
+              <DetailsTopicCard title={"2. Introduction"} />
             </>
           ) : (
             <>
-              <DetailsCard
-                title={"Greeting"}
+              <DetailsLessonNotesCard
+                title={"1. Greeting"}
                 page="lessonnotes"
                 description={true}
               />
-              <DetailsCard
-                title={"Introduction"}
+              <DetailsLessonNotesCard
+                title={"2. Introduction"}
                 page="lessonnotes"
                 description={true}
               />

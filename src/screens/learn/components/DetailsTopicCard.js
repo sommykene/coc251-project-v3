@@ -2,27 +2,21 @@ import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { color } from "../../../assets/colors/colors";
 
-function DetailsCard({ title, page, description }) {
+function DetailsTopicCard({ title }) {
   return (
     <div
       style={{
-        height: page === "viewtopics" ? "60px" : "100px",
+        height: "60px",
         padding: "0 20px",
       }}
       className="card"
     >
       <div style={styles.main}>
-        <p style={styles.topicTitle}>1. {title}</p>
+        <p style={styles.topicTitle}>{title}</p>
         <div style={styles.buttons} className="balsamiq-ig">
           <p style={styles.button}>Start</p>
         </div>
       </div>
-      {description && (
-        <span style={styles.description}>
-          In this lesson we will be learning how to say basic greetings and
-          introductions
-        </span>
-      )}
     </div>
   );
 }
@@ -55,4 +49,4 @@ const styles = {
   },
 };
 
-export default DetailsCard;
+export default DetailsTopicCard;
