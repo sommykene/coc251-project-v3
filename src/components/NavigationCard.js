@@ -40,7 +40,7 @@ function NavigationCard({ page }) {
 const styles = {
   card: {
     display: "flex",
-    gap: 7,
+    gap: 15,
     backgroundColor: color.white,
     borderRadius: "10px",
     width: "fit-content",
