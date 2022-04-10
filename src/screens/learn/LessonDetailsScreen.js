@@ -4,22 +4,24 @@ import { color } from "../../assets/colors/colors";
 import BottomColorStrip from "../../components/BottomColorStrip";
 import { Spacer } from "../../components/utils";
 import Sidebar from "../../components/Sidebar";
-import { useParams, useSearchParams } from "react-router-dom";
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { lessonsData } from "../../data/lessonsData";
 import DetailsLessonCard from "./components/DetailsLessonCard";
 import DetailsLessonNotesCard from "./components/DetailsLessonNotesCard";
 import DetailsTopicCard from "./components/DetailsTopicCard";
+import ArrowIcon from "../../assets/images/icons/arrow_icon.png";
 
 function LessonDetailsScreen() {
   const { t, i18n } = useTranslation("common");
   let params = useParams();
   let [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
+
   const page = "learn";
 
   const lesson = lessonsData.find((lesson) => {
     return lesson.lessonid === params.lessonid;
   });
-  console.log(lessonsData);
 
   return (
     <div style={{ display: "flex", gap: "30px" }}>
@@ -32,7 +34,14 @@ function LessonDetailsScreen() {
       {/* MAIN BODY */}
       <div style={{ flex: 4 }}>
         <div style={styles.main}>
-          <span className="pagetitle balsamiq-ig">{t("igbolessons")}</span>
+          <div>
+            <img
+              style={{ marginRight: "10px", cursor: "pointer" }}
+              src={ArrowIcon}
+              onClick={() => navigate("/learn")}
+            />
+            <span className="pagetitle balsamiq-ig">{t("igbolessons")}</span>
+          </div>
           <span
             style={{ color: color.darkgrey }}
             className="subtitle balsamiq-ig"
