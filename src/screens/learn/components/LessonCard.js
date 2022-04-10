@@ -1,9 +1,12 @@
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { Link, useParams, useSearchParams } from "react-router-dom";
 import { color } from "../../../assets/colors/colors";
 
-function LessonCard({ title, description, tab, setTab }) {
+function LessonCard({ lessonid, title, description }) {
   const { t, i18n } = useTranslation("common");
+  let params = useParams();
+  let [searchParams, setSearchParams] = useSearchParams();
 
   return (
     <div
@@ -13,20 +16,26 @@ function LessonCard({ title, description, tab, setTab }) {
       <div style={styles.main}>
         <p style={styles.lessonsTitle}>{title}</p>
         <div style={styles.buttons} className="balsamiq-ig">
-          <p
-            style={tab !== "viewtopics" ? styles.button : styles.buttonSelected}
-            onClick={() => setTab("viewtopics")}
+          <Link
+            style={
+              searchParams.get("tab") !== "viewtopics"
+                ? styles.button
+                : styles.buttonSelected
+            }
+            to={`/learn/${lessonid || params.lessonid}/details?tab=viewtopics`}
           >
             {t("viewtopics")}
-          </p>
-          <p
+          </Link>
+          <Link
             style={
-              tab !== "lessonnotes" ? styles.button : styles.buttonSelected
+              searchParams.get("tab") !== "lessonnotes"
+                ? styles.button
+                : styles.buttonSelected
             }
-            onClick={() => setTab("lessonnotes")}
+            to={`/learn/${lessonid || params.lessonid}/details?tab=lessonnotes`}
           >
             {t("lessonnotes")}
-          </p>
+          </Link>
         </div>
       </div>
       {description && (
@@ -54,6 +63,7 @@ const styles = {
     display: "flex",
     flexDirection: "row",
     gap: "20px",
+    alignItems: "center",
   },
   button: {
     borderRadius: "10px",
@@ -61,12 +71,14 @@ const styles = {
     padding: "10px 10px 5px",
     color: color.darkgrey,
     cursor: "pointer",
+    height: "fit-content",
   },
   buttonSelected: {
     borderRadius: "10px",
     padding: "10px 10px 5px",
     backgroundColor: color.yellow,
     cursor: "pointer",
+    color: color.black,
   },
   description: {
     fontSize: "18px",

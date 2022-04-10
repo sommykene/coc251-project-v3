@@ -8,15 +8,12 @@ import DetailsCard from "./components/DetailsCard";
 import BottomColorStrip from "../../components/BottomColorStrip";
 import { Spacer } from "../../components/utils";
 import Sidebar from "../../components/Sidebar";
+import { useSearchParams } from "react-router-dom";
 
 function LessonDetailsScreen() {
   const { t, i18n } = useTranslation("common");
-  const [tab, setTab] = useState("viewtopics");
+  let [searchParams, setSearchParams] = useSearchParams();
   const page = "learn";
-
-  const handleTabChange = (name) => {
-    setTab(name);
-  };
 
   return (
     <div style={{ display: "flex", gap: "30px" }}>
@@ -38,15 +35,10 @@ function LessonDetailsScreen() {
           </span>
         </div>
         <Spacer height="20px" />
-        <LessonCard
-          title={"Greeting - Ndewoo"}
-          description={true}
-          tab={tab}
-          setTab={(tabname) => handleTabChange(tabname)}
-        />
+        <LessonCard title={"Greeting - Ndewoo"} description={true} />
         <Spacer height="40px" />
         {/* TABS */}
-        <p className="subtitle balsamiq-ig">{t(tab)}</p>
+        <p className="subtitle balsamiq-ig">{t(searchParams.get("tab"))}</p>
 
         <div
           style={{
@@ -56,7 +48,7 @@ function LessonDetailsScreen() {
             marginTop: "20px",
           }}
         >
-          {tab !== "lessonnotes" ? (
+          {searchParams.get("tab") !== "lessonnotes" ? (
             <>
               <DetailsCard title={"Greeting"} page="viewtopics" />
               <DetailsCard title={"Introduction"} page="viewtopics" />
