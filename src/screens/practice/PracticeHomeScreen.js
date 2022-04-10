@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { color } from "../../assets/colors/colors";
-import NavigationCard from "../../components/NavigationCard";
-import ProfileCard from "../../components/ProfileCard";
+import Sidebar from "../../components/Sidebar";
 
 function PracticeHomeScreen() {
   const { t, i18n } = useTranslation("common");
@@ -10,9 +9,7 @@ function PracticeHomeScreen() {
   return (
     <div style={{ display: "flex", gap: "30px" }}>
       <div style={{ flex: 1 }}>
-        <ProfileCard />
-        <br />
-        <NavigationCard page={"practice"} />
+        <Sidebar page="practice" />
       </div>
 
       {/* MAIN BODY */}

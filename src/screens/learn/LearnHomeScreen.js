@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { color } from "../../assets/colors/colors";
 import NavigationCard from "../../components/NavigationCard";
 import ProfileCard from "../../components/ProfileCard";
+import Sidebar from "../../components/Sidebar";
 import LessonCard from "./components/LessonCard";
 
 function LearnHomeScreen() {
@@ -11,9 +12,7 @@ function LearnHomeScreen() {
   return (
     <div style={{ display: "flex", gap: "30px" }}>
       <div style={{ flex: 1 }}>
-        <ProfileCard />
-        <br />
-        <NavigationCard page={"learn"} />
+        <Sidebar page="learn" />
         <br />
         <div
           style={{
