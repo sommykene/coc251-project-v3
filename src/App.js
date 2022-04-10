@@ -63,7 +63,7 @@ const VocabRoutes = () => {
 
 const styles = {
   logo: {
-    position: "absolute",
+    position: "fixed",
     top: 15,
     left: 15,
     width: "30px",
