@@ -1,5 +1,6 @@
 import React from "react";
 import { color } from "../../../assets/colors/colors";
+import AudioButton from "../../../components/AudioButton";
 
 function DictionaryWordCard({ result }) {
   return (
@@ -16,13 +17,7 @@ function DictionaryWordCard({ result }) {
       <p>{result.definitions}</p>
 
       {result && result.pronunciation && (
-        <>
-          <br />
-          <audio style={{ margin: "12px", width: "80%" }} controls>
-            <source src={result.pronunciation} type="audio/webm" />
-            Your browser does not support the audio tag.
-          </audio>
-        </>
+        <AudioButton url={result.pronunciation} width="50px" />
       )}
     </div>
   );
