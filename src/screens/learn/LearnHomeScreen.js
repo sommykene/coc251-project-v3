@@ -12,7 +12,6 @@ function LearnHomeScreen() {
   const page = "learn";
 
   const lessonCard = lessonsData.map((lessons) => {
-    console.log("hi", lessons);
     return (
       <LessonCard
         key={lessons.lessonid}
