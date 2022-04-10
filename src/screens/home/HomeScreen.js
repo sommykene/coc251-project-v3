@@ -22,7 +22,7 @@ function HomeScreen() {
       <div style={{ marginBottom: "30px" }} className="rowone">
         {/* Profile */}
         <div style={{ flex: 1 }}>
-          <ProfileCard />
+          <ProfileCard home={true} />
         </div>
 
         {/* learn */}

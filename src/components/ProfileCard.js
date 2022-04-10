@@ -4,9 +4,17 @@ import { color } from "../assets/colors/colors";
 import profileImage from "../assets/images/profile.png";
 import ToggleSwitch from "./ToggleSwitch";
 
-function ProfileCard() {
+function ProfileCard({ home }) {
   return (
-    <div style={styles.card} className="section-cards balsamiq">
+    <div
+      style={{
+        padding: "15px 0",
+        alignItems: "center",
+        backgroundColor: color.white,
+        height: !home && "320px",
+      }}
+      className="section-cards balsamiq"
+    >
       <img style={styles.profileImage} src={profileImage} />
       <span style={{ margin: "10px 0" }}>Som E-Agwuegbo</span>
       <span>@sommykene</span>
