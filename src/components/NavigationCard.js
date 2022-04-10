@@ -49,12 +49,14 @@ function NavigationCard({ page }) {
 const styles = {
   card: {
     display: "flex",
-    gap: 15,
+    gap: "0px 10px",
     backgroundColor: color.white,
     borderRadius: "10px",
     width: "fit-content",
     margin: "auto",
     padding: "0 10px",
+    flexWrap: "wrap",
+    justifyContent: "center",
   },
 };
 
