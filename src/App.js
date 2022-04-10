@@ -29,7 +29,7 @@ const LearnRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<LearnHomeScreen />} />
-      <Route path=":id/details" element={<LessonDetailsScreen />} />
+      <Route path=":lessonid/details" element={<LessonDetailsScreen />} />
     </Routes>
   );
 };
