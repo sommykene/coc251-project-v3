@@ -9,7 +9,7 @@ function DetailsLessonNotesCard({ title, page, description }) {
         height: "100px",
         padding: "0 20px",
       }}
-      className="card"
+      className="basic-card"
     >
       <p style={styles.topicTitle}>{title}</p>
       <span style={styles.description}>

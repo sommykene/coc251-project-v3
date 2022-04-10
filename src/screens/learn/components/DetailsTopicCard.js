@@ -9,7 +9,7 @@ function DetailsTopicCard({ title }) {
         height: "60px",
         padding: "0 20px",
       }}
-      className="card"
+      className="basic-card"
     >
       <div style={styles.main}>
         <p style={styles.topicTitle}>{title}</p>

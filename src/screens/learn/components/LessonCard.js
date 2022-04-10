@@ -9,7 +9,7 @@ function LessonCard({ lessonid, title }) {
   let [searchParams, setSearchParams] = useSearchParams();
 
   return (
-    <div style={{ height: "70px", padding: "0 30px" }} className="card">
+    <div style={{ height: "70px", padding: "0 30px" }} className="basic-card">
       <div style={styles.main}>
         <p style={styles.lessonsTitle}>{title}</p>
         <div style={styles.buttons} className="balsamiq-ig">
