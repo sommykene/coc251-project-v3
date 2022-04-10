@@ -24,12 +24,13 @@ function BottomColorStrip({ page }) {
   return (
     <div
       style={{
-        position: "absolute",
+        position: "fixed",
         bottom: 0,
         left: 0,
         height: "30px",
         width: "100%",
         backgroundColor: stripColor,
+        zIndex: 1,
       }}
     ></div>
   );
