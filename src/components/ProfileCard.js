@@ -32,7 +32,7 @@ const XpPointCard = () => {
 const styles = {
   card: {
     paddingBottom: "15px",
-    height: "350px",
+    // height: "350px",
     alignItems: "center",
   },
   logo: {
