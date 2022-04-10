@@ -2,6 +2,7 @@ import { format } from "date-fns";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { color } from "../../../assets/colors/colors";
+import { Spacer } from "../../../components/utils";
 
 function WordOfTheDayCard() {
   const igbo = "ifunanya";
@@ -12,7 +13,7 @@ function WordOfTheDayCard() {
   return (
     <div style={styles.wotd}>
       <span>{t("wotd")}</span>
-      <br />
+      <Spacer height="20px" />
       <p style={{ margin: "6px 0" }} className="calibri">
         {format(new Date(), "MMM d, yyyy")}
       </p>

@@ -4,6 +4,7 @@ import { color } from "../../assets/colors/colors";
 import NavigationCard from "../../components/NavigationCard";
 import ProfileCard from "../../components/ProfileCard";
 import Sidebar from "../../components/Sidebar";
+import { Spacer } from "../../components/utils";
 import LessonCard from "./components/LessonCard";
 
 function LearnHomeScreen() {
@@ -13,7 +14,7 @@ function LearnHomeScreen() {
     <div style={{ display: "flex", gap: "30px" }}>
       <div style={{ flex: 1 }}>
         <Sidebar page="learn" />
-        <br />
+        <Spacer height="20px" />
         <div
           style={{
             border: `1.5px ${color.teal} solid`,
@@ -28,7 +29,7 @@ function LearnHomeScreen() {
           >
             Level
           </span>
-          <br />
+          <Spacer height="20px" />
           <span style={{ fontSize: "20px" }}>Beginner</span>
         </div>
       </div>
