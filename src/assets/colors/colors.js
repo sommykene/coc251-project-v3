@@ -10,6 +10,7 @@ export const color = {
   orange: "#FF8801",
   red: "#D12E2E",
   green: "#008751",
+  tealtint: "rgba(78,155,149,0.48)",
 
   // sections
   learn: "#4E9B95",
