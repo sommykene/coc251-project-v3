@@ -6,7 +6,7 @@ import { icon } from "../assets/images";
 
 function NavigationCard({ page }) {
   return (
-    <div style={styles.card}>
+    <div style={styles.navcard}>
       <Link to="/">
         <img src={icon.home} />
       </Link>
