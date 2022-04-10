@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { color } from "../assets/colors/colors";
 
 import profileImage from "../assets/images/profile.png";
@@ -7,7 +6,7 @@ import ToggleSwitch from "./ToggleSwitch";
 
 function ProfileCard() {
   return (
-    <div style={styles.card} className="card balsamiq">
+    <div style={styles.card} className="section-cards balsamiq">
       <img style={styles.profileImage} src={profileImage} />
       <span style={{ margin: "10px 0" }}>Som E-Agwuegbo</span>
       <span>@sommykene</span>
@@ -30,6 +29,7 @@ const styles = {
   card: {
     padding: "15px 0",
     alignItems: "center",
+    backgroundColor: color.white,
   },
   profileImage: {
     marginBottom: "10px",
