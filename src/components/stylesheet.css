@@ -10,13 +10,20 @@
   background-color: #000;
 }
 
-.navcard {
-  background-color: white;
-  position: relative;
+.card {
   border-radius: 10px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px 0;
+  height: 41vh;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+a {
+  text-decoration: none;
 }
 
 .pagetitle {
