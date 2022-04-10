@@ -18,17 +18,16 @@ function PracticeHomeScreen() {
       {/* MAIN BODY */}
       <div style={{ flex: 4 }}>
         <span className="pagetitle balsamiq-ig">{t("practice")}</span>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "15px",
-            marginTop: "20px",
-          }}
-        ></div>
+        <div style={styles.main}></div>
       </div>
     </div>
   );
 }
-
+const styles = {
+  main: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+};
 export default PracticeHomeScreen;

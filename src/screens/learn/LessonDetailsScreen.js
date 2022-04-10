@@ -7,6 +7,7 @@ import LessonCard from "./components/LessonCard";
 import DetailsCard from "./components/DetailsCard";
 import BottomColorStrip from "../../components/BottomColorStrip";
 import { Spacer } from "../../components/utils";
+import Sidebar from "../../components/Sidebar";
 
 function LessonDetailsScreen() {
   const { t, i18n } = useTranslation("common");
@@ -20,17 +21,22 @@ function LessonDetailsScreen() {
   return (
     <div style={{ display: "flex", gap: "30px" }}>
       <div style={{ flex: 1 }}>
-        <ProfileCard />
+        <Sidebar page={page} />
         <Spacer height="20px" />
-        <NavigationCard page={page} />
-        <Spacer height="20px" />
-        <LevelDisplay />
         <BottomColorStrip page={page} />
       </div>
 
       {/* MAIN BODY */}
       <div style={{ flex: 4 }}>
-        <span className="pagetitle balsamiq-ig">{t("igbolessons")}</span>
+        <div style={styles.main}>
+          <span className="pagetitle balsamiq-ig">{t("igbolessons")}</span>
+          <span
+            style={{ color: color.darkgrey }}
+            className="subtitle balsamiq-ig"
+          >
+            Level: Beginner
+          </span>
+        </div>
         <Spacer height="20px" />
         <LessonCard
           title={"Greeting - Ndewoo"}
@@ -75,26 +81,11 @@ function LessonDetailsScreen() {
   );
 }
 
-const LevelDisplay = () => {
-  return (
-    <div
-      style={{
-        border: `1.5px ${color.teal} solid`,
-        backgroundColor: "white",
-        borderRadius: "10px",
-        padding: "10px",
-      }}
-    >
-      <span
-        className="balsamiq-ig"
-        style={{ color: color.darkgrey, fontSize: "20px" }}
-      >
-        Level
-      </span>
-      <Spacer height="3px" />
-      <span style={{ fontSize: "20px" }}>Beginner</span>
-    </div>
-  );
+const styles = {
+  main: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
 };
-
 export default LessonDetailsScreen;

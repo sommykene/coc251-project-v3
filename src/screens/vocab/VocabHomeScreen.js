@@ -18,17 +18,17 @@ function VocabHomeScreen() {
       {/* MAIN BODY */}
       <div style={{ flex: 4 }}>
         <span className="pagetitle balsamiq-ig">{t("vocab")}</span>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "15px",
-            marginTop: "20px",
-          }}
-        ></div>
+        <div style={styles.main}></div>
       </div>
     </div>
   );
 }
-
+const styles = {
+  main: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "15px",
+    marginTop: "20px",
+  },
+};
 export default VocabHomeScreen;

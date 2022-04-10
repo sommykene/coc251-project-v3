@@ -18,14 +18,7 @@ function CultureHomeScreen() {
       {/* MAIN BODY */}
       <div style={{ flex: 4 }}>
         <span className="pagetitle balsamiq-ig">{t("culture")}</span>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "15px",
-            marginTop: "20px",
-          }}
-        >
+        <div style={styles.main}>
           <p className="balsamiq-ig subtitle">Igbo Music Playlist</p>
           <iframe
             style={{ borderRadius: "12px" }}
@@ -52,4 +45,12 @@ function CultureHomeScreen() {
   );
 }
 
+const styles = {
+  main: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "15px",
+    marginTop: "20px",
+  },
+};
 export default CultureHomeScreen;
