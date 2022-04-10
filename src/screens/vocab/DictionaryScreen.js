@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { icon } from "../../assets/images";
 import { color } from "../../assets/colors/colors";
+import { Spacer } from "../../components/utils";
 
 function DictionaryScreen() {
   const page = "vocab";
@@ -28,7 +29,8 @@ function DictionaryScreen() {
           />
           <span className="pagetitle balsamiq-ig">{t("vocab")}</span>
         </div>
-        <p className="subtitle balsamiq-ig">Dictionary</p>
+        <Spacer height={"20px"} />
+        <p className="subtitle balsamiq-ig">Dictionary (Power By IgboAPI)</p>
       </div>
     </div>
   );

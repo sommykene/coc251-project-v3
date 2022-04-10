@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { icon } from "../../assets/images";
 import { color } from "../../assets/colors/colors";
+import { Spacer } from "../../components/utils";
 
 function LessonsVocab() {
   const page = "vocab";
@@ -28,6 +29,7 @@ function LessonsVocab() {
           />
           <span className="pagetitle balsamiq-ig">{t("vocab")}</span>
         </div>
+        <Spacer height={"20px"} />
         <p className="subtitle balsamiq-ig">Dictionary</p>
       </div>
     </div>
