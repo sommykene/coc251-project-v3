@@ -2,14 +2,17 @@ import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { color } from "../../assets/colors/colors";
 import Sidebar from "../../components/Sidebar";
+import BottomColorStrip from "../../components/BottomColorStrip";
 
 function VocabHomeScreen() {
   const { t, i18n } = useTranslation("common");
+  const page = "vocab";
 
   return (
     <div style={{ display: "flex", gap: "30px" }}>
       <div style={{ flex: 1 }}>
-        <Sidebar page="vocab" />
+        <Sidebar page={page} />
+        <BottomColorStrip page={page} />
       </div>
 
       {/* MAIN BODY */}

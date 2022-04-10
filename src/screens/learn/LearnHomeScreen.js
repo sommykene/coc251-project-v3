@@ -6,14 +6,16 @@ import ProfileCard from "../../components/ProfileCard";
 import Sidebar from "../../components/Sidebar";
 import { Spacer } from "../../components/utils";
 import LessonCard from "./components/LessonCard";
+import BottomColorStrip from "../../components/BottomColorStrip";
 
 function LearnHomeScreen() {
   const { t, i18n } = useTranslation("common");
+  const page = "learn";
 
   return (
     <div style={{ display: "flex", gap: "30px" }}>
       <div style={{ flex: 1 }}>
-        <Sidebar page="learn" />
+        <Sidebar page={page} />
         <Spacer height="20px" />
         <div
           style={{
@@ -32,6 +34,7 @@ function LearnHomeScreen() {
           <Spacer height="20px" />
           <span style={{ fontSize: "20px" }}>Beginner</span>
         </div>
+        <BottomColorStrip page={page} />
       </div>
 
       {/* MAIN BODY */}
