@@ -22,11 +22,11 @@ function LearnHomeScreen() {
       <div style={{ flex: 4 }}>
         <span className="pagetitle balsamiq-ig">{t("igbolessons")}</span>
         <div style={styles.main}>
-          <LessonCard title={"Greeting - Ndewoo"} />
-          <LessonCard title={"Greeting - Ndewoo"} />
-          <LessonCard title={"Greeting - Ndewoo"} />
-          <LessonCard title={"Greeting - Ndewoo"} />
-          <LessonCard title={"Greeting - Ndewoo"} />
+          <LessonCard lessonid={"0"} title={"Greeting - Ndewoo"} />
+          <LessonCard lessonid={"1"} title={"Greeting - Ndewoo"} />
+          <LessonCard lessonid={"2"} title={"Greeting - Ndewoo"} />
+          <LessonCard lessonid={"3"} title={"Greeting - Ndewoo"} />
+          <LessonCard lessonid={"4"} title={"Greeting - Ndewoo"} />
         </div>
       </div>
     </div>
