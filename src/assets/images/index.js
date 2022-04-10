@@ -35,6 +35,9 @@ export const icon = {
       active: require("./icons/vocab_icon_small_active.png"),
     },
     large: require("./icons/vocab_icon_large.png"),
+    phrasebooks: require("./icons/phrasebooks_icon.png"),
+    lessonvocab: require("./icons/lessonvocab_icon.png"),
+    dictionary: require("./icons/dictionary_icon.png"),
   },
   culture: {
     small: {
