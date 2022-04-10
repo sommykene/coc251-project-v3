@@ -38,6 +38,8 @@ export const icon = {
     phrasebooks: require("./icons/phrasebooks_icon.png"),
     lessonvocab: require("./icons/lessonvocab_icon.png"),
     dictionary: require("./icons/dictionary_icon.png"),
+    expand: require("./icons/expand_icon.png"),
+    collapse: require("./icons/collapse_icon.png"),
   },
   culture: {
     small: {
