@@ -1,16 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { color } from "../assets/colors/colors";
-import logo from "../assets/images/logo.svg";
+
 import profileImage from "../assets/images/profile.png";
 import ToggleSwitch from "./ToggleSwitch";
 
 function ProfileCard() {
   return (
     <div style={styles.card} className="card balsamiq">
-      <Link to="/">
-        <img style={styles.logo} src={logo} />
-      </Link>
       <img style={styles.profileImage} src={profileImage} />
       <span style={{ margin: "10px 0" }}>Som E-Agwuegbo</span>
       <span>@sommykene</span>
@@ -31,17 +28,10 @@ const XpPointCard = () => {
 
 const styles = {
   card: {
-    paddingBottom: "15px",
-    // height: "350px",
+    padding: "15px 0",
     alignItems: "center",
   },
-  logo: {
-    position: "absolute",
-    top: 15,
-    left: 15,
-  },
   profileImage: {
-    marginTop: "40px",
     marginBottom: "10px",
   },
   xppoints: {

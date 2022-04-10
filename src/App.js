@@ -1,4 +1,6 @@
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
+import logo from "./assets/images/logo.svg";
+
 import CultureHomeScreen from "./screens/culture/CultureHomeScreen";
 import HomeScreen from "./screens/home/HomeScreen";
 import LearnHomeScreen from "./screens/learn/LearnHomeScreen";
@@ -9,6 +11,9 @@ import VocabHomeScreen from "./screens/vocab/VocabHomeScreen";
 function App() {
   return (
     <div className="App">
+      <Link to="/">
+        <img style={styles.logo} src={logo} />
+      </Link>
       <Routes>
         <Route path="/" element={<HomeScreen />} />
         <Route path="learn/*" element={<LearnRoutes />} />
@@ -43,5 +48,14 @@ const VocabRoutes = () => {
       <Route path="/" element={<VocabHomeScreen />} />
     </Routes>
   );
+};
+
+const styles = {
+  logo: {
+    position: "absolute",
+    top: 15,
+    left: 15,
+    width: "30px",
+  },
 };
 export default App;
