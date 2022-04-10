@@ -5,7 +5,7 @@ import AudioButton from "../../../components/AudioButton";
 function DictionaryWordCard({ result }) {
   return (
     <div
-      className="section-cards"
+      className="card"
       style={{
         height: "fit-content",
         backgroundColor: color.white,

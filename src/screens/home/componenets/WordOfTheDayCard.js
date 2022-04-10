@@ -11,7 +11,7 @@ function WordOfTheDayCard() {
   const { t, i18n } = useTranslation("common");
 
   return (
-    <div style={styles.wotd} className="section-cards">
+    <div style={styles.wotd} className="card">
       <span>{t("wotd")}</span>
       <Spacer height="20px" />
       <p style={{ margin: "6px 0" }} className="calibri">

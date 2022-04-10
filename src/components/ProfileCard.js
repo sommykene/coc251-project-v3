@@ -13,7 +13,7 @@ function ProfileCard({ home }) {
         backgroundColor: color.white,
         height: !home && "320px",
       }}
-      className="section-cards balsamiq"
+      className="card balsamiq"
     >
       <img style={styles.profileImage} src={profileImage} />
       <span style={{ margin: "10px 0" }}>Som E-Agwuegbo</span>

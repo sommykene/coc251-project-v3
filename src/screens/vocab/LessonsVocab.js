@@ -55,7 +55,7 @@ function LessonsVocab() {
 
         {/* search bar */}
         <input
-          className="section-cards"
+          className="card"
           style={{
             backgroundColor: color.white,
             width: "100%",

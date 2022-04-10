@@ -26,7 +26,7 @@ function VocabHomeScreen() {
           <div style={{ flex: 1 }}>
             <Link to="/vocab/lessonsvocab">
               <div
-                className="section-cards"
+                className="card"
                 style={{
                   backgroundColor: color.white,
                   color: color.black,
@@ -43,7 +43,7 @@ function VocabHomeScreen() {
           <div style={{ flex: 1 }}>
             <Link to="/vocab/dictionary">
               <div
-                className="section-cards"
+                className="card"
                 style={{
                   backgroundColor: color.white,
                   color: color.black,
@@ -60,7 +60,7 @@ function VocabHomeScreen() {
           <div style={{ flex: 1 }}>
             <Link to="/vocab/phrasebooks">
               <div
-                className="section-cards"
+                className="card"
                 style={{
                   backgroundColor: color.white,
                   color: color.black,

@@ -24,10 +24,7 @@ function HomeScreen() {
         {/* learn */}
         <div style={{ flex: 2 }}>
           <Link to="/learn">
-            <div
-              style={{ backgroundColor: color.learn }}
-              className="section-cards"
-            >
+            <div style={{ backgroundColor: color.learn }} className="card">
               <img
                 style={{ height: "150px", width: "150px" }}
                 src={icon.learn.large}
@@ -42,10 +39,7 @@ function HomeScreen() {
         {/* Practice */}
         <div style={{ flex: 2 }}>
           <Link to="/practice">
-            <div
-              style={{ backgroundColor: color.practice }}
-              className="section-cards"
-            >
+            <div style={{ backgroundColor: color.practice }} className="card">
               <img
                 style={{ height: "150px", width: "150px" }}
                 src={icon.practice.large}
@@ -63,10 +57,7 @@ function HomeScreen() {
         {/* vocabulary */}
         <div style={{ flex: 2 }}>
           <Link to="/vocab">
-            <div
-              style={{ backgroundColor: color.vocab }}
-              className="section-cards"
-            >
+            <div style={{ backgroundColor: color.vocab }} className="card">
               <img
                 style={{ height: "150px", width: "150px" }}
                 src={icon.vocab.large}
@@ -86,10 +77,7 @@ function HomeScreen() {
         {/* culture */}
         <div style={{ flex: 2 }}>
           <Link to="/culture">
-            <div
-              style={{ backgroundColor: color.culture }}
-              className="section-cards"
-            >
+            <div style={{ backgroundColor: color.culture }} className="card">
               <img
                 style={{ height: "150px", width: "150px" }}
                 src={icon.culture.large}

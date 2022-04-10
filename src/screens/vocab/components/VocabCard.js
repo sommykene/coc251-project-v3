@@ -14,7 +14,7 @@ function VocabCard({ result }) {
   } = useCollapse();
   return (
     <div
-      className="section-cards"
+      className="card"
       style={{
         height: "fit-content",
         backgroundColor: color.white,
