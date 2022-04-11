@@ -1,12 +1,24 @@
 import { Link, Route, Routes } from "react-router-dom";
 import logo from "./assets/images/logo.svg";
 
-import CultureHomeScreen from "./screens/culture/CultureHomeScreen";
 import HomeScreen from "./screens/home/HomeScreen";
+import CultureHomeScreen from "./screens/culture/CultureHomeScreen";
+
+// Learn
 import LearnHomeScreen from "./screens/learn/LearnHomeScreen";
 import LessonDetailsScreen from "./screens/learn/LessonDetailsScreen";
 import LessonLayoutPage from "./screens/learn/LessonLayoutPage";
+
+// Practice
 import PracticeHomeScreen from "./screens/practice/PracticeHomeScreen";
+import MatchAudio from "./screens/practice/games/MatchAudio";
+import MatchMultipleAudio from "./screens/practice/games/MatchMultipleAudio";
+import MatchTranslations from "./screens/practice/games/MatchTranslations";
+import SpellAudio from "./screens/practice/games/SpellAudio";
+import TranslateAudio from "./screens/practice/games/TranslateAudio";
+import TranslateText from "./screens/practice/games/TranslateText";
+
+// Vocab
 import DictionaryScreen from "./screens/vocab/DictionaryScreen";
 import LessonsVocab from "./screens/vocab/LessonsVocab";
 import PhrasebookExpanded from "./screens/vocab/PhrasebookExpanded";
@@ -44,6 +56,12 @@ const PracticeRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<PracticeHomeScreen />} />
+      <Route path="/ma" element={<MatchAudio />} />
+      <Route path="/mma" element={<MatchMultipleAudio />} />
+      <Route path="/mt" element={<MatchTranslations />} />
+      <Route path="/sa" element={<SpellAudio />} />
+      <Route path="/ta" element={<TranslateAudio />} />
+      <Route path="/tt" element={<TranslateText />} />
     </Routes>
   );
 };
