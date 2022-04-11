@@ -3,7 +3,14 @@ import { color } from "../../../../assets/colors/colors";
 
 function EnglishWordsList({ data }) {
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "10px",
+        width: "50%",
+      }}
+    >
       <div style={styles.row}>
         <div className="card" style={styles.header}>
           English
