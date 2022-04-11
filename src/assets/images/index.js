@@ -1,5 +1,8 @@
 export const icon = {
-  backarrow: require("./icons/arrow_icon.png"),
+  backarrow: {
+    black: require("./icons/arrow_icon.png"),
+    white: require("./icons/arrow_icon_white.png"),
+  },
   home: require("./icons/home_icon_small.png"),
 
   // learn & practice
