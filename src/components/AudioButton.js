@@ -33,12 +33,15 @@ const AudioButton = ({ url, width, fillSpace, color }) => {
               width: "100%",
               height: "100%",
               textAlign: "center",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
             }
           : {}
       }
     >
       <img
-        style={{ width: width }}
+        style={{ width: width, height: width }}
         src={
           color === "teal"
             ? icon.audio.teal
