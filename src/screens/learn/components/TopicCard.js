@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import { color } from "../../../assets/colors/colors";
 
-function LessonCard({ lessonid, title }) {
+function TopicCard({ topicid, title }) {
   const { t, i18n } = useTranslation("common");
   let params = useParams();
   let [searchParams, setSearchParams] = useSearchParams();
@@ -15,13 +15,13 @@ function LessonCard({ lessonid, title }) {
         <div style={styles.buttons} className="balsamiq-ig">
           <Link
             style={
-              searchParams.get("tab") !== "viewtopics"
+              searchParams.get("tab") !== "viewlessons"
                 ? styles.button
                 : styles.buttonSelected
             }
-            to={`/learn/${lessonid}/details?tab=viewtopics`}
+            to={`/learn/${topicid}/details?tab=viewlessons`}
           >
-            {t("viewtopics")}
+            {t("viewlessons")}
           </Link>
           <Link
             style={
@@ -29,7 +29,7 @@ function LessonCard({ lessonid, title }) {
                 ? styles.button
                 : styles.buttonSelected
             }
-            to={`/learn/${lessonid}/details?tab=lessonnotes`}
+            to={`/learn/${topicid}/details?tab=lessonnotes`}
           >
             {t("lessonnotes")}
           </Link>
@@ -77,4 +77,4 @@ const styles = {
   },
 };
 
-export default LessonCard;
+export default TopicCard;

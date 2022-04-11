@@ -6,9 +6,9 @@ import { Spacer } from "../../components/utils";
 import Sidebar from "../../components/Sidebar";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { lessonsData } from "../../data/lessonsData";
-import DetailsLessonCard from "./components/DetailsLessonCard";
-import DetailsLessonNotesCard from "./components/DetailsLessonNotesCard";
 import DetailsTopicCard from "./components/DetailsTopicCard";
+import DetailsLessonNotesCard from "./components/DetailsLessonNotesCard";
+import DetailsLessonCard from "./components/DetailsLessonCard";
 import { icon } from "../../assets/images";
 
 function LessonDetailsScreen() {
@@ -20,7 +20,7 @@ function LessonDetailsScreen() {
   const page = "learn";
 
   const lesson = lessonsData.find((lesson) => {
-    return lesson.lessonid === params.lessonid;
+    return lesson.topicid === params.topicid;
   });
 
   return (
@@ -50,7 +50,7 @@ function LessonDetailsScreen() {
           </span>
         </div>
         <Spacer height="20px" />
-        <DetailsLessonCard
+        <DetailsTopicCard
           title={lesson.title}
           description={lesson.description}
         />
@@ -68,8 +68,8 @@ function LessonDetailsScreen() {
         >
           {searchParams.get("tab") !== "lessonnotes" ? (
             <>
-              <DetailsTopicCard title={"1. Greeting"} />
-              <DetailsTopicCard title={"2. Introduction"} />
+              <DetailsLessonCard title={"1. Greeting"} />
+              <DetailsLessonCard title={"2. Introduction"} />
             </>
           ) : (
             <>

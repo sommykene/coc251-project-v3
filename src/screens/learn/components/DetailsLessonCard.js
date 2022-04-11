@@ -1,50 +1,24 @@
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { Link, useParams, useSearchParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { color } from "../../../assets/colors/colors";
 
-function DetailsLessonCard({ lessonid, title, description }) {
-  const { t, i18n } = useTranslation("common");
-  let params = useParams();
-  let [searchParams, setSearchParams] = useSearchParams();
-
+function DetailsLessonCard({ title }) {
   return (
-    <div style={{ height: "100px", padding: "0 30px" }} className="basic-card">
+    <div
+      style={{
+        height: "60px",
+        padding: "0 20px",
+      }}
+      className="basic-card"
+    >
       <div style={styles.main}>
-        <p style={styles.lessonsTitle}>{title}</p>
+        <p style={styles.topicTitle}>{title}</p>
         <div style={styles.buttons} className="balsamiq-ig">
-          <p
-            style={
-              searchParams.get("tab") !== "viewtopics"
-                ? styles.button
-                : styles.buttonSelected
-            }
-            onClick={() => {
-              setSearchParams({ tab: "viewtopics" });
-            }}
-          >
-            {t("viewtopics")}
-          </p>
-          <p
-            style={
-              searchParams.get("tab") !== "lessonnotes"
-                ? styles.button
-                : styles.buttonSelected
-            }
-            onClick={() => {
-              setSearchParams({ tab: "lessonnotes" });
-            }}
-          >
-            {t("lessonnotes")}
-          </p>
+          <Link to="/learn/1/lesson/1">Start</Link>
+          <p style={styles.button}>Start</p>
         </div>
       </div>
-      {description && (
-        <span style={styles.description}>
-          In this lesson we will be learning how to say basic greetings and
-          introductions
-        </span>
-      )}
     </div>
   );
 }
@@ -56,34 +30,24 @@ const styles = {
     justifyContent: "space-between",
     width: "100%",
   },
-  lessonsTitle: {
+  topicTitle: {
     flex: 1,
     fontSize: "20px",
+    margin: "auto",
   },
   buttons: {
     display: "flex",
     flexDirection: "row",
     gap: "20px",
-    alignItems: "center",
+    cursor: "pointer",
   },
   button: {
     borderRadius: "10px",
-    border: `1px ${color.darkgrey} solid`,
-    padding: "10px 10px 5px",
-    color: color.darkgrey,
-    cursor: "pointer",
-    height: "fit-content",
-  },
-  buttonSelected: {
-    borderRadius: "10px",
-    padding: "10px 10px 5px",
-    backgroundColor: color.yellow,
-    cursor: "pointer",
-    color: color.black,
-  },
-  description: {
-    fontSize: "18px",
-    color: color.darkgrey,
+    padding: "5px 10px",
+    backgroundColor: color.green,
+    color: color.white,
+    width: "100px",
+    textAlign: "center",
   },
 };
 

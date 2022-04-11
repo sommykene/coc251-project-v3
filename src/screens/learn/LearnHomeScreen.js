@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { color } from "../../assets/colors/colors";
 import Sidebar from "../../components/Sidebar";
 import { Spacer } from "../../components/utils";
-import LessonCard from "./components/LessonCard";
+import TopicCard from "./components/TopicCard";
 import BottomColorStrip from "../../components/BottomColorStrip";
 import { lessonsData } from "../../data/lessonsData";
 
@@ -11,11 +11,11 @@ function LearnHomeScreen() {
   const { t, i18n } = useTranslation("common");
   const page = "learn";
 
-  const lessonCard = lessonsData.map((lessons) => {
+  const topicCard = lessonsData.map((lessons) => {
     return (
-      <LessonCard
-        key={lessons.lessonid}
-        lessonid={lessons.lessonid}
+      <TopicCard
+        key={lessons.topicid}
+        topicid={lessons.topicid}
         title={lessons.title}
       />
     );
@@ -32,7 +32,7 @@ function LearnHomeScreen() {
       {/* MAIN BODY */}
       <div style={{ flex: 4 }}>
         <span className="pagetitle balsamiq-ig">{t("igbolessons")}</span>
-        <div style={styles.main}>{lessonCard}</div>
+        <div style={styles.main}>{topicCard}</div>
       </div>
     </div>
   );
