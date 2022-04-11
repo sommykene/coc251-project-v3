@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 import EnglishWordsList from "./components/EnglishWordsList";
-import sound from "../../../assets/sound.wav";
-import { color } from "../../../assets/colors/colors";
-import TranslationGrid from "../../../components/TranslationsGrid";
-import { icon } from "../../../assets/images";
-import BottomColorStrip from "../../../components/BottomColorStrip";
+import sound from "../../assets/sound.wav";
+import { color } from "../../assets/colors/colors";
+import TranslationGrid from "../../components/TranslationsGrid";
+import { icon } from "../../assets/images";
+import BottomColorStrip from "../../components/BottomColorStrip";
 import { useTranslation } from "react-i18next";
 import VocabDisplay from "./components/VocabDisplay";
 import { Link } from "react-router-dom";
-import Logo from "../../../assets/images/logo.svg";
+import Logo from "../../assets/images/logo.svg";
 
 const data = [
   { english: "Welcome", igbo: "nnọọ", sound: sound },

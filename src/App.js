@@ -5,7 +5,7 @@ import CultureHomeScreen from "./screens/culture/CultureHomeScreen";
 import HomeScreen from "./screens/home/HomeScreen";
 import LearnHomeScreen from "./screens/learn/LearnHomeScreen";
 import LessonDetailsScreen from "./screens/learn/LessonDetailsScreen";
-import LessonLayoutPage from "./screens/learn/lesson/LessonLayoutPage";
+import LessonLayoutPage from "./screens/learn/LessonLayoutPage";
 import PracticeHomeScreen from "./screens/practice/PracticeHomeScreen";
 import DictionaryScreen from "./screens/vocab/DictionaryScreen";
 import LessonsVocab from "./screens/vocab/LessonsVocab";
