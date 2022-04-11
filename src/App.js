@@ -35,7 +35,7 @@ const LearnRoutes = () => {
     <Routes>
       <Route path="/" element={<LearnHomeScreen />} />
       <Route path=":topicid/details" element={<LessonDetailsScreen />} />
-      <Route path=":topicid/details" element={<LessonIntroPage />} />
+      <Route path=":topicid/lesson/:lessonid" element={<LessonIntroPage />} />
     </Routes>
   );
 };
