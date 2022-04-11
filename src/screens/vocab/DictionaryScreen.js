@@ -68,7 +68,7 @@ function DictionaryScreen() {
         <div>
           <img
             style={{ marginRight: "10px", cursor: "pointer" }}
-            src={icon.backarrow}
+            src={icon.backarrow.black}
             onClick={() => navigate("/vocab")}
           />
           <span className="pagetitle balsamiq-ig">{t("vocab")}</span>
