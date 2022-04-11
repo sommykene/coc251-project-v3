@@ -21,7 +21,7 @@ const useAudio = (url) => {
   return [playing, toggle];
 };
 
-const AudioButton = ({ url, width, fillSpace }) => {
+const AudioButton = ({ url, width, fillSpace, color }) => {
   const [playing, toggle] = useAudio(url);
 
   return (
@@ -37,7 +37,16 @@ const AudioButton = ({ url, width, fillSpace }) => {
           : {}
       }
     >
-      <img style={{ width: width }} src={icon.audio.black} />
+      <img
+        style={{ width: width }}
+        src={
+          color === "teal"
+            ? icon.audio.teal
+            : color === "white"
+            ? icon.audio.white
+            : icon.audio.black
+        }
+      />
     </div>
   );
 };
