@@ -27,8 +27,8 @@ function ProfileCard({ home }) {
 const XpPointCard = () => {
   return (
     <div style={styles.xppoints}>
-      <span style={{ flexGrow: 1 }}>XP Points</span>
-      <span>1789</span>
+      <span style={{ flex: 1 }}>XP Points</span>
+      <span style={{ flex: 1 }}>1789</span>
     </div>
   );
 };
