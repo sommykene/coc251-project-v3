@@ -1,7 +1,9 @@
 * {
   box-sizing: border-box;
 }
-
+html {
+  height: 100vh;
+}
 body {
   margin: 0;
   font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
@@ -9,6 +11,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #e9edf0;
   padding: 50px;
+  height: 100%;
+}
+
+#root,
+.App {
+  height: 100%;
 }
 
 code {
