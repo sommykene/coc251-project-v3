@@ -14,6 +14,7 @@ import common_en from "./translations/en/common.json";
 import common_ig from "./translations/ig/common.json";
 import common_enig from "./translations/enig/common.json";
 import LoginScreen from "./screens/auth/LoginScreen";
+import SignUpScreen from "./screens/auth/SignUpScreen";
 
 i18next.init({
   interpolation: { escapeValue: false },
@@ -38,9 +39,9 @@ root.render(
     <Router>
       <I18nextProvider i18n={i18next}>
         <Routes>
-          <Route path="/" element={<App />} />
+          <Route path="/*" element={<App />} />
           <Route path="/login" element={<LoginScreen />} />
-          <Route path="/signup" element={<LoginScreen />} />
+          <Route path="/signup" element={<SignUpScreen />} />
         </Routes>
       </I18nextProvider>
     </Router>
