@@ -15,8 +15,9 @@ function DetailsLessonCard({ title }) {
       <div style={styles.main}>
         <p style={styles.topicTitle}>{title}</p>
         <div style={styles.buttons} className="balsamiq-ig">
-          <Link to="/learn/1/lesson/1">Start</Link>
-          <p style={styles.button}>Start</p>
+          <Link to="/learn/1/lesson/1">
+            <p style={styles.button}>Start</p>
+          </Link>
         </div>
       </div>
     </div>
