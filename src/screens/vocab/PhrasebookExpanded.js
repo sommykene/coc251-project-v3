@@ -7,6 +7,7 @@ import { icon } from "../../assets/images";
 import { color } from "../../assets/colors/colors";
 import { Spacer } from "../../components/utils";
 import AudioButton from "../../components/AudioButton";
+import sound from "../../assets/sound.wav";
 
 function PhrasebookExpanded() {
   const page = "vocab";
@@ -103,7 +104,7 @@ function PhrasebookExpanded() {
                 cursor: "pointer",
               }}
             >
-              <AudioButton width="35px" />
+              <AudioButton url={sound} width="35px" fillSpace={true} />
             </div>
           </div>
         </div>

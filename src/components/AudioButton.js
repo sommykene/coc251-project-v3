@@ -21,12 +21,23 @@ const useAudio = (url) => {
   return [playing, toggle];
 };
 
-const AudioButton = ({ url, width }) => {
+const AudioButton = ({ url, width, fillSpace }) => {
   const [playing, toggle] = useAudio(url);
 
   return (
-    <div>
-      <img style={{ width: width }} onClick={toggle} src={icon.audio.black} />
+    <div
+      onClick={toggle}
+      style={
+        fillSpace
+          ? {
+              width: "100%",
+              height: "100%",
+              textAlign: "center",
+            }
+          : {}
+      }
+    >
+      <img style={{ width: width }} src={icon.audio.black} />
     </div>
   );
 };
