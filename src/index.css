@@ -10,7 +10,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #e9edf0;
-  padding: 50px;
   height: 100%;
 }
 
@@ -19,6 +18,9 @@ body {
   height: 100%;
 }
 
+.App {
+  padding: 50px;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

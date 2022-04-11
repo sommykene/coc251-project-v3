@@ -24,6 +24,7 @@ import LessonsVocab from "./screens/vocab/LessonsVocab";
 import PhrasebookExpanded from "./screens/vocab/PhrasebookExpanded";
 import PhrasebooksHomeScreen from "./screens/vocab/PhrasebooksHomeScreen";
 import VocabHomeScreen from "./screens/vocab/VocabHomeScreen";
+import LoginScreen from "./screens/auth/LoginScreen";
 
 function App() {
   return (
@@ -33,6 +34,8 @@ function App() {
       </Link>
       <Routes>
         <Route path="/" element={<HomeScreen />} />
+        <Route path="/login" element={<LoginScreen />} />
+        <Route path="/signup" element={<HomeScreen />} />
         <Route path="learn/*" element={<LearnRoutes />} />
         <Route path="practice/*" element={<PracticeRoutes />} />
         <Route path="vocab/*" element={<VocabRoutes />} />

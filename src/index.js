@@ -1,7 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import "./index.css";
 import "./assets/fonts/BalsamiqSans-Regular-Igbo.otf";
@@ -13,6 +13,7 @@ import i18next from "i18next";
 import common_en from "./translations/en/common.json";
 import common_ig from "./translations/ig/common.json";
 import common_enig from "./translations/enig/common.json";
+import LoginScreen from "./screens/auth/LoginScreen";
 
 i18next.init({
   interpolation: { escapeValue: false },
@@ -36,7 +37,11 @@ root.render(
   <React.StrictMode>
     <Router>
       <I18nextProvider i18n={i18next}>
-        <App />
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/login" element={<LoginScreen />} />
+          <Route path="/signup" element={<LoginScreen />} />
+        </Routes>
       </I18nextProvider>
     </Router>
   </React.StrictMode>
