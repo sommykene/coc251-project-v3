@@ -5,7 +5,7 @@ import CultureHomeScreen from "./screens/culture/CultureHomeScreen";
 import HomeScreen from "./screens/home/HomeScreen";
 import LearnHomeScreen from "./screens/learn/LearnHomeScreen";
 import LessonDetailsScreen from "./screens/learn/LessonDetailsScreen";
-import LessonIntroPage from "./screens/learn/lesson/LessonIntroPage";
+import LessonLayoutPage from "./screens/learn/lesson/LessonLayoutPage";
 import PracticeHomeScreen from "./screens/practice/PracticeHomeScreen";
 import DictionaryScreen from "./screens/vocab/DictionaryScreen";
 import LessonsVocab from "./screens/vocab/LessonsVocab";
@@ -35,7 +35,7 @@ const LearnRoutes = () => {
     <Routes>
       <Route path="/" element={<LearnHomeScreen />} />
       <Route path=":topicid/details" element={<LessonDetailsScreen />} />
-      <Route path=":topicid/lesson/:lessonid" element={<LessonIntroPage />} />
+      <Route path=":topicid/lesson/:lessonid" element={<LessonLayoutPage />} />
     </Routes>
   );
 };
