@@ -1,13 +1,14 @@
 {
-    "learn": "Learn",
-    "practice": "Practice",
-    "vocab":"Vocabulary",
-    "wotd":"Word Of The Day",
-    "culture":"Culture",
-    "igbolessons":"Igbo Lessons",
-    "viewtopics":"View Topics",
-    "lessonnotes":"Lesson Notes",
-    "home":"Home",
-    "goback":"Go Back",
-    "check":"Check"
+  "learn": "Learn",
+  "practice": "Practice",
+  "vocab": "Vocabulary",
+  "wotd": "Word Of The Day",
+  "culture": "Culture",
+  "igbolessons": "Igbo Lessons",
+  "viewtopics": "View Topics",
+  "lessonnotes": "Lesson Notes",
+  "home": "Home",
+  "goback": "Go Back",
+  "check": "Check",
+  "leave": "Leave"
 }

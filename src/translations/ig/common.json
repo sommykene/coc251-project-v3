@@ -1,14 +1,14 @@
 {
-    "learn": "Imụọ",
-    "practice": "Imụ",
-    "vocab":"Ọkwụ",
-    "wotd":"Ọkwụ Nke Ụbọchị Taa",
-    "culture":"Omenala",
-    "igbolessons":"Nkuzi Igbo",
-    "viewtopics":"Lee Isiokwu",
-    "lessonnotes":"Ndetu Ihe Ekuzili",
-    "home":"Ụlọ",
-    "goback":"Gaa Azụ",
-    "check":"Nene"
-
+  "learn": "Imụọ",
+  "practice": "Imụ",
+  "vocab": "Ọkwụ",
+  "wotd": "Ọkwụ Nke Ụbọchị Taa",
+  "culture": "Omenala",
+  "igbolessons": "Nkuzi Igbo",
+  "viewtopics": "Lee Isiokwu",
+  "lessonnotes": "Ndetu Ihe Ekuzili",
+  "home": "Ụlọ",
+  "goback": "Gaa Azụ",
+  "check": "Nene",
+  "leave": "Pụọ"
 }
