@@ -16,6 +16,8 @@ import common_enig from "./translations/enig/common.json";
 import LoginScreen from "./screens/auth/LoginScreen";
 import SignUpScreen from "./screens/auth/SignUpScreen";
 
+import { AuthProvider } from "./services/AuthProvider";
+
 i18next.init({
   interpolation: { escapeValue: false },
   lng: "en",
@@ -37,13 +39,15 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Router>
-      <I18nextProvider i18n={i18next}>
-        <Routes>
-          <Route path="/*" element={<App />} />
-          <Route path="/login" element={<LoginScreen />} />
-          <Route path="/signup" element={<SignUpScreen />} />
-        </Routes>
-      </I18nextProvider>
+      <AuthProvider>
+        <I18nextProvider i18n={i18next}>
+          <Routes>
+            <Route path="/*" element={<App />} />
+            <Route path="/login" element={<LoginScreen />} />
+            <Route path="/signup" element={<SignUpScreen />} />
+          </Routes>
+        </I18nextProvider>
+      </AuthProvider>
     </Router>
   </React.StrictMode>
 );

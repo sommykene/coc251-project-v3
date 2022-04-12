@@ -1,4 +1,11 @@
-import { Link, Route, Routes } from "react-router-dom";
+import {
+  Link,
+  Navigate,
+  Outlet,
+  Route,
+  Routes,
+  useNavigate,
+} from "react-router-dom";
 import logo from "./assets/images/logo.svg";
 
 import HomeScreen from "./screens/home/HomeScreen";
@@ -24,26 +31,42 @@ import LessonsVocab from "./screens/vocab/LessonsVocab";
 import PhrasebookExpanded from "./screens/vocab/PhrasebookExpanded";
 import PhrasebooksHomeScreen from "./screens/vocab/PhrasebooksHomeScreen";
 import VocabHomeScreen from "./screens/vocab/VocabHomeScreen";
-import LoginScreen from "./screens/auth/LoginScreen";
+
+import { useEffect } from "react";
 
 function App() {
+  const navigate = useNavigate();
+
   return (
     <div className="App">
       <Link to="/">
         <img style={styles.logo} src={logo} />
       </Link>
       <Routes>
-        <Route path="/" element={<HomeScreen />} />
-        <Route path="/login" element={<LoginScreen />} />
-        <Route path="/signup" element={<HomeScreen />} />
-        <Route path="learn/*" element={<LearnRoutes />} />
-        <Route path="practice/*" element={<PracticeRoutes />} />
-        <Route path="vocab/*" element={<VocabRoutes />} />
-        <Route path="culture/*" element={<CultureHomeScreen />} />
+        <Route exact path="/" element={<PrivateRoute />}>
+          <Route path="" element={<HomeScreen />} />
+        </Route>
+        <Route exact path="learn/*" element={<PrivateRoute />}>
+          <Route path="" element={<LearnRoutes />} />
+        </Route>
+        <Route exact path="practice/*" element={<PrivateRoute />}>
+          <Route path="" element={<PracticeRoutes />} />
+        </Route>
+        <Route exact path="vocab/*" element={<PrivateRoute />}>
+          <Route path="" element={<VocabRoutes />} />
+        </Route>
+        <Route exact path="culture/*" element={<PrivateRoute />}>
+          <Route path="" element={<CultureHomeScreen />} />
+        </Route>
       </Routes>
     </div>
   );
 }
+
+const PrivateRoute = () => {
+  const token = sessionStorage.getItem("Auth Token");
+  return token ? <Outlet /> : <Navigate to={"/login"} />;
+};
 
 const LearnRoutes = () => {
   return (

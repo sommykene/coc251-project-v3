@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import ProfileCard from "../../components/ProfileCard";
 import WordOfTheDayCard from "./componenets/WordOfTheDayCard";
@@ -11,6 +11,7 @@ import { icon } from "../../assets/images";
 
 function HomeScreen() {
   const { t, i18n } = useTranslation("common");
+  const navigate = useNavigate();
 
   return (
     <div id="homescreen" className="balsamiq-ig">

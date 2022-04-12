@@ -1,10 +1,26 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { color } from "../assets/colors/colors";
 
 import profileImage from "../assets/images/profile.png";
+import { SignOut } from "../services/auth";
 import ToggleSwitch from "./ToggleSwitch";
+import { Spacer } from "./utils";
 
 function ProfileCard({ home }) {
+  const navigate = useNavigate();
+
+  const handleLogout = async (navigate) => {
+    await SignOut()
+      .then(() => {
+        sessionStorage.removeItem("Auth Token");
+        navigate("/login");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div
       style={{
@@ -20,6 +36,17 @@ function ProfileCard({ home }) {
       <span>@sommykene</span>
       <XpPointCard />
       <ToggleSwitch />
+      <Spacer height="10px" />
+      <span
+        style={{
+          cursor: "pointer",
+          color: color.darkgrey,
+          fontStyle: "italic",
+        }}
+        onClick={() => handleLogout(navigate)}
+      >
+        Logout
+      </span>
     </div>
   );
 }
