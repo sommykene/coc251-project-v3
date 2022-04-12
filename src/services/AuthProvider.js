@@ -5,9 +5,9 @@ import { GetUserFromFirestore } from "./auth";
 
 const AuthContext = createContext();
 
-export const useAuth = () => {
+export default function useAuth() {
   return useContext(AuthContext);
-};
+}
 
 export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState();
