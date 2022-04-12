@@ -32,8 +32,6 @@ import PhrasebookExpanded from "./screens/vocab/PhrasebookExpanded";
 import PhrasebooksHomeScreen from "./screens/vocab/PhrasebooksHomeScreen";
 import VocabHomeScreen from "./screens/vocab/VocabHomeScreen";
 
-import { useEffect } from "react";
-
 function App() {
   const navigate = useNavigate();
 
@@ -44,19 +42,11 @@ function App() {
       </Link>
       <Routes>
         <Route exact path="/" element={<PrivateRoute />}>
-          <Route path="" element={<HomeScreen />} />
-        </Route>
-        <Route exact path="learn/*" element={<PrivateRoute />}>
-          <Route path="" element={<LearnRoutes />} />
-        </Route>
-        <Route exact path="practice/*" element={<PrivateRoute />}>
-          <Route path="" element={<PracticeRoutes />} />
-        </Route>
-        <Route exact path="vocab/*" element={<PrivateRoute />}>
-          <Route path="" element={<VocabRoutes />} />
-        </Route>
-        <Route exact path="culture/*" element={<PrivateRoute />}>
-          <Route path="" element={<CultureHomeScreen />} />
+          <Route path="/" element={<HomeScreen />} />
+          <Route path="learn/*" element={<LearnRoutes />} />
+          <Route path="practice/*" element={<PracticeRoutes />} />
+          <Route path="vocab/*" element={<VocabRoutes />} />
+          <Route path="culture/*" element={<CultureHomeScreen />} />
         </Route>
       </Routes>
     </div>
