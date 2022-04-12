@@ -13,7 +13,7 @@ const INITIAL_USER = {
   password: "",
   confirmpassword: "",
   email: "",
-  firstname: "",
+  firstName: "",
   xp_points: 0,
 };
 
@@ -45,7 +45,7 @@ function SignUpScreen() {
         AddUserToFirestore(
           user,
           userForm.email,
-          userForm.firstname,
+          userForm.firstName,
           userForm.username
         );
         navigate("/");
@@ -95,7 +95,7 @@ function SignUpScreen() {
           style={styles.input}
           type="text"
           placeholder="First Name"
-          name="firstname"
+          name="firstName"
           onChange={(e) => handleChange(e)}
         />
         <Spacer height="10px" />
