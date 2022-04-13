@@ -7,7 +7,7 @@ function PhrasebookCard({ name, description, numberOfVocab }) {
     <div
       className="card-ns"
       style={{
-        height: "fit-content",
+        height: "100%",
         backgroundColor: color.white,
         width: "300px",
         padding: "15px",
