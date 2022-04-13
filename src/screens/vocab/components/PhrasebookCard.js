@@ -2,7 +2,7 @@ import React from "react";
 import { color } from "../../../assets/colors/colors";
 import { Spacer } from "../../../components/utils";
 
-function PhrasebookCard() {
+function PhrasebookCard({ name, description, numberOfVocab }) {
   return (
     <div
       className="card-ns"
@@ -13,14 +13,17 @@ function PhrasebookCard() {
         padding: "15px",
         cursor: "pointer",
         color: color.black,
+        textAlign: "center",
       }}
     >
       <p style={{ margin: 0, fontSize: "18px" }} className="balsamiq-ig">
-        Meeting People
+        {name}
       </p>
       <Spacer height="15px" />
+      <p style={{ margin: 0, color: color.darkgrey }}>{description}</p>
+      <Spacer height="15px" />
       <p style={{ margin: 0, color: color.darkgrey }} className="balsamiq-ig">
-        15 Phrases
+        {numberOfVocab} Phrases
       </p>
     </div>
   );

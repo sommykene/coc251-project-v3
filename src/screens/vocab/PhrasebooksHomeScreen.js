@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Sidebar from "../../components/Sidebar";
 import BottomColorStrip from "../../components/BottomColorStrip";
 import { useTranslation } from "react-i18next";
@@ -7,11 +7,23 @@ import { icon } from "../../assets/images";
 import { color } from "../../assets/colors/colors";
 import { Spacer } from "../../components/utils";
 import PhrasebookCard from "./components/PhrasebookCard";
+import { getPhrasebooks } from "../../services/firestore";
 
 function PhrasebooksHomeScreen() {
   const page = "vocab";
   const { t, i18n } = useTranslation("common");
   const navigate = useNavigate();
+
+  const [phrasebooks, setPhrasebooks] = useState([]);
+
+  useEffect(() => {
+    const getPhrasebooksList = async () => {
+      const list = await getPhrasebooks();
+      setPhrasebooks(list);
+    };
+
+    getPhrasebooksList();
+  }, []);
 
   return (
     <div style={{ display: "flex", gap: "30px" }}>
@@ -34,21 +46,21 @@ function PhrasebooksHomeScreen() {
         <p className="subtitle balsamiq-ig">Phrasebooks</p>
         <Spacer height={"20px"} />
         <div style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
-          <Link to="/vocab/phrasebooks/1">
-            <PhrasebookCard />
-          </Link>
-          <Link to="/vocab/phrasebooks/1">
-            <PhrasebookCard />
-          </Link>
-          <Link to="/vocab/phrasebooks/1">
-            <PhrasebookCard />
-          </Link>
-          <Link to="/vocab/phrasebooks/1">
-            <PhrasebookCard />
-          </Link>
-          <Link to="/vocab/phrasebooks/1">
-            <PhrasebookCard />
-          </Link>
+          {phrasebooks.map((book, index) => {
+            return (
+              <Link
+                key={index}
+                to={`/vocab/phrasebooks/${book.id}`}
+                state={{ name: book.name }}
+              >
+                <PhrasebookCard
+                  name={book.name}
+                  description={book.description}
+                  numberOfVocab={book.numberOfVocab}
+                />
+              </Link>
+            );
+          })}
         </div>
       </div>
     </div>

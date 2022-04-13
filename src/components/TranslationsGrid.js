@@ -1,9 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import AudioButton from "./AudioButton";
 import { color } from "../assets/colors/colors";
 
 function TranslationsGrid({ data }) {
+  // useEffect(() => {}, [data]);
+
+  const row =
+    data &&
+    data.map((vocab, index) => {
+      return (
+        <div key={index} style={styles.row}>
+          <div className="card-ns" style={styles.wordCards}>
+            <span style={{ padding: "0 20px" }}>{vocab.english}</span>
+          </div>
+          <div className="card-ns" style={styles.wordCards}>
+            <span style={{ padding: "0 20px" }}>{vocab.igbo}</span>
+          </div>
+          <div className="card-ns" style={styles.audioBtn}>
+            <AudioButton url={vocab.sound} width="35px" fillSpace={true} />
+          </div>
+        </div>
+      );
+    });
+
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
       <div style={styles.row}>
@@ -15,28 +35,11 @@ function TranslationsGrid({ data }) {
         </div>
         <div style={{ flex: 1 }}></div>
       </div>
-      {data.map((vocab, index) => {
-        return <TranslationRow key={index} vocab={vocab} />;
-      })}
+      {row}
     </div>
   );
 }
 
-const TranslationRow = ({ vocab }) => {
-  return (
-    <div style={styles.row}>
-      <div className="card-ns" style={styles.wordCards}>
-        <span style={{ padding: "0 20px" }}>{vocab.english}</span>
-      </div>
-      <div className="card-ns" style={styles.wordCards}>
-        <span style={{ padding: "0 20px" }}>{vocab.igbo}</span>
-      </div>
-      <div className="card-ns" style={styles.audioBtn}>
-        <AudioButton url={vocab.sound} width="35px" fillSpace={true} />
-      </div>
-    </div>
-  );
-};
 const styles = {
   header: {
     flex: 4,
