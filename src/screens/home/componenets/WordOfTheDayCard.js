@@ -1,14 +1,38 @@
 import { format } from "date-fns";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { color } from "../../../assets/colors/colors";
 import { Spacer } from "../../../components/utils";
+import { getWordOfTheDay } from "../../../services/firestore";
+
+function hasOneDayPassed() {
+  var date = new Date().toLocaleDateString();
+
+  if (localStorage.wordofthedaydate == date) return false;
+
+  localStorage.wordofthedaydate = date;
+  return true;
+}
 
 function WordOfTheDayCard() {
-  const igbo = "ifunanya";
-  const wordlength = igbo.length;
+  const wotdCheck = JSON.parse(localStorage.getItem("wotd")) || {};
+  const wotdLengthCheck = JSON.parse(localStorage.getItem("wotdlength")) || 0;
+  const [wotd, setWotd] = useState(wotdCheck);
+  const [wotdLength, setWotdLength] = useState(wotdLengthCheck);
 
   const { t, i18n } = useTranslation("common");
+  useEffect(() => {
+    async function generateWotd() {
+      if (!hasOneDayPassed()) return false;
+      const res = await getWordOfTheDay();
+      localStorage.wotd = JSON.stringify(res[0]);
+      localStorage.wotdlength = res[0].igbo.length;
+
+      setWotd(JSON.parse(localStorage.wotd));
+      setWotdLength(localStorage.wotdLength);
+    }
+    generateWotd();
+  }, []);
 
   return (
     <div style={styles.wotd} className="card">
@@ -23,17 +47,17 @@ function WordOfTheDayCard() {
           style={{
             margin: "10px 0",
             fontSize:
-              wordlength < 10
+              wotdLength < 10
                 ? "60px"
-                : wordlength > 10 && wordlength < 15
+                : wotdLength > 10 && wotdLength < 15
                 ? "50px"
                 : "40px",
           }}
         >
-          {igbo}
+          {wotd && wotd.igbo}
         </p>
-        <p style={styles.english}>Love</p>
-        <p style={styles.definition}>an intense feeling of deep affection</p>
+        <p style={styles.english}>{wotd && wotd.english}</p>
+        <p style={styles.definition}>{wotd && wotd.definition}</p>
       </div>
     </div>
   );
