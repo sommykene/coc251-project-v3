@@ -10,6 +10,7 @@ import DetailsTopicCard from "./components/DetailsTopicCard";
 import DetailsLessonNotesCard from "./components/DetailsLessonNotesCard";
 import DetailsLessonCard from "./components/DetailsLessonCard";
 import { icon } from "../../assets/images";
+import { getLessons } from "../../services/firestore";
 
 function LessonDetailsScreen() {
   const { t, i18n } = useTranslation("common");
@@ -18,6 +19,19 @@ function LessonDetailsScreen() {
   const navigate = useNavigate();
 
   const page = "learn";
+
+  const [lessonsList, setLessonsList] = useState([]);
+
+  useEffect(() => {
+    const getTopicLessons = async (topicID) => {
+      console.log(topicID);
+      let lessons = await getLessons(topicID);
+      console.log(lessons);
+      setLessonsList(lessons);
+    };
+
+    getTopicLessons(params.topicid);
+  }, []);
 
   const lesson = lessonsData.find((lesson) => {
     return lesson.topicid === params.topicid;
@@ -50,10 +64,7 @@ function LessonDetailsScreen() {
           </span>
         </div>
         <Spacer height="20px" />
-        <DetailsTopicCard
-          title={lesson.title}
-          description={lesson.description}
-        />
+        <DetailsTopicCard title={"jih"} description={"hi"} />
         <Spacer height="40px" />
         {/* TABS */}
         <p className="subtitle balsamiq-ig">{t(searchParams.get("tab"))}</p>

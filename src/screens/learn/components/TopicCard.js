@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import { color } from "../../../assets/colors/colors";
 
-function TopicCard({ topicid, title }) {
+function TopicCard({ topicID, title }) {
   const { t, i18n } = useTranslation("common");
   let params = useParams();
   let [searchParams, setSearchParams] = useSearchParams();
@@ -19,7 +19,7 @@ function TopicCard({ topicid, title }) {
                 ? styles.button
                 : styles.buttonSelected
             }
-            to={`/learn/${topicid}/details?tab=viewlessons`}
+            to={`/learn/${topicID}/details?tab=viewlessons`}
           >
             {t("viewlessons")}
           </Link>
@@ -29,7 +29,7 @@ function TopicCard({ topicid, title }) {
                 ? styles.button
                 : styles.buttonSelected
             }
-            to={`/learn/${topicid}/details?tab=lessonnotes`}
+            to={`/learn/${topicID}/details?tab=lessonnotes`}
           >
             {t("lessonnotes")}
           </Link>
