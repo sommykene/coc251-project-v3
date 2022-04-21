@@ -23,7 +23,6 @@ function LearnHomeScreen() {
     };
     const getLevelTopics = async (levelID) => {
       let topics = await getTopics(levelID);
-      console.log(topics);
       setTopicsList(topics);
     };
 
@@ -59,6 +58,7 @@ function LearnHomeScreen() {
                 key={topic.topicID}
                 topicID={topic.topicID}
                 title={topic.name}
+                description={topic.description}
               />
             );
           })}

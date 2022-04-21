@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { color } from "../../../assets/colors/colors";
 
-function DetailsLessonNotesCard({ title, page, description }) {
+function DetailsLessonNotesCard({ title, notes }) {
   return (
     <div
       style={{
@@ -12,10 +12,7 @@ function DetailsLessonNotesCard({ title, page, description }) {
       className="basic-card"
     >
       <p style={styles.topicTitle}>{title}</p>
-      <span style={styles.description}>
-        In this lesson we will be learning how to say basic greetings and
-        introductions
-      </span>
+      <span style={styles.description}>{notes}</span>
     </div>
   );
 }

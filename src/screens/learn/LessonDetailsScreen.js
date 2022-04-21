@@ -24,9 +24,7 @@ function LessonDetailsScreen() {
 
   useEffect(() => {
     const getTopicLessons = async (topicID) => {
-      console.log(topicID);
       let lessons = await getLessons(topicID);
-      console.log(lessons);
       setLessonsList(lessons);
     };
 
@@ -64,7 +62,7 @@ function LessonDetailsScreen() {
           </span>
         </div>
         <Spacer height="20px" />
-        <DetailsTopicCard title={"jih"} description={"hi"} />
+        <DetailsTopicCard />
         <Spacer height="40px" />
         {/* TABS */}
         <p className="subtitle balsamiq-ig">{t(searchParams.get("tab"))}</p>
@@ -79,21 +77,45 @@ function LessonDetailsScreen() {
         >
           {searchParams.get("tab") !== "lessonnotes" ? (
             <>
-              <DetailsLessonCard title={"1. Greeting"} />
-              <DetailsLessonCard title={"2. Introduction"} />
+              {lessonsList.length > 0 ? (
+                lessonsList.map((lesson, index) => {
+                  return (
+                    <DetailsLessonCard
+                      key={index}
+                      lessonID={lesson.lessonID}
+                      title={index + 1 + ". " + lesson.name}
+                    />
+                  );
+                })
+              ) : (
+                <p
+                  className="balsamiq-ig"
+                  style={{ fontStyle: "italic", color: color.darkgrey }}
+                >
+                  No Lesson Available, Please Check Back Another Time
+                </p>
+              )}
             </>
           ) : (
             <>
-              <DetailsLessonNotesCard
-                title={"1. Greeting"}
-                page="lessonnotes"
-                description={true}
-              />
-              <DetailsLessonNotesCard
-                title={"2. Introduction"}
-                page="lessonnotes"
-                description={true}
-              />
+              {lessonsList.length > 0 ? (
+                lessonsList.map((lesson, index) => {
+                  return (
+                    <DetailsLessonNotesCard
+                      key={index}
+                      title={index + 1 + ". " + lesson.name}
+                      notes={lesson.notes}
+                    />
+                  );
+                })
+              ) : (
+                <p
+                  className="balsamiq-ig"
+                  style={{ fontStyle: "italic", color: color.darkgrey }}
+                >
+                  No Lesson Available, Please Check Back Another Time
+                </p>
+              )}
             </>
           )}
         </div>

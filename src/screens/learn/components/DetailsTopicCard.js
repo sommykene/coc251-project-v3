@@ -1,17 +1,36 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Link, useParams, useSearchParams } from "react-router-dom";
+import {
+  Link,
+  useLocation,
+  useParams,
+  useSearchParams,
+} from "react-router-dom";
 import { color } from "../../../assets/colors/colors";
+import { getTopicByID } from "../../../services/firestore";
 
-function DetailsTopicCard({ topicid, title, description }) {
+function DetailsTopicCard({ location }) {
   const { t, i18n } = useTranslation("common");
   let params = useParams();
   let [searchParams, setSearchParams] = useSearchParams();
+  const [topic, setTopic] = useState({});
+
+  useEffect(() => {
+    const getTopic = async (topicID) => {
+      let topicDetails = await getTopicByID(topicID);
+      setTopic(topicDetails);
+    };
+
+    getTopic(params.topicid);
+  }, []);
 
   return (
-    <div style={{ height: "100px", padding: "0 30px" }} className="basic-card">
+    <div
+      style={{ minHeight: "100px", padding: "0 30px 15px" }}
+      className="basic-card"
+    >
       <div style={styles.main}>
-        <p style={styles.lessonsTitle}>{title}</p>
+        <p style={styles.lessonsTitle}>{topic && topic.name}</p>
         <div style={styles.buttons} className="balsamiq-ig">
           <p
             style={
@@ -39,12 +58,7 @@ function DetailsTopicCard({ topicid, title, description }) {
           </p>
         </div>
       </div>
-      {description && (
-        <span style={styles.description}>
-          In this lesson we will be learning how to say basic greetings and
-          introductions
-        </span>
-      )}
+      <span style={styles.description}>{topic && topic.description}</span>
     </div>
   );
 }

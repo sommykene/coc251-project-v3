@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { color } from "../../../assets/colors/colors";
 
-function DetailsLessonCard({ title }) {
+function DetailsLessonCard({ title, lessonID }) {
+  let params = useParams();
   return (
     <div
       style={{
@@ -15,7 +16,7 @@ function DetailsLessonCard({ title }) {
       <div style={styles.main}>
         <p style={styles.topicTitle}>{title}</p>
         <div style={styles.buttons} className="balsamiq-ig">
-          <Link to="/learn/1/lesson/1">
+          <Link to={`/learn/${params.topicid}/lesson/${lessonID}`}>
             <p style={styles.button}>Start</p>
           </Link>
         </div>
