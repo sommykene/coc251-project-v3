@@ -7,6 +7,8 @@ import {
   FieldPath,
   getDoc,
   doc,
+  orderBy,
+  limit,
 } from "firebase/firestore";
 import { db } from "./firebase";
 
@@ -29,6 +31,7 @@ export const AddFiles = () => {
       lessonOrder: x.lessonOrder,
       phrasebookID: x.phrasebookID,
       phrasebookOrder: x.phrasebookOrder,
+      random: x.random,
     });
   });
 };
@@ -38,7 +41,7 @@ export const getUserLevel = async (levelID) => {
   const levelSnap = await getDoc(doc(db, "levels", levelID));
   const levelName = levelSnap.exists() && levelSnap.data().name;
 
-  return levelName || "beg";
+  return levelName;
 };
 
 export const getLevels = async () => {};
@@ -52,6 +55,16 @@ export const getTopics = async (levelID) => {
     ...doc.data(),
   }));
   return topicsList;
+};
+
+export const getTopicByID = async (topicID) => {
+  const topicSnap = await getDoc(doc(db, "topics", topicID));
+  const topicDetails = topicSnap.exists() && {
+    name: topicSnap.data().name,
+    description: topicSnap.data().description,
+  };
+
+  return topicDetails;
 };
 
 export const getLessons = async (topicID) => {
@@ -95,4 +108,35 @@ export const getPhrasebookVocab = async (id) => {
   }
 
   return phrasebookVocabList;
+};
+
+export const getWordOfTheDay = async () => {
+  var random = Math.random();
+  const lessThanRandQuery = query(
+    collection(db, "vocabs"),
+    where("random", "<=", random),
+    orderBy("random", "desc"),
+    limit(1)
+  );
+  const lessThanQuerySnapshot = await getDocs(lessThanRandQuery);
+  const wotd = lessThanQuerySnapshot.docs.map((doc) => ({
+    id: doc.id,
+    ...doc.data(),
+  }));
+
+  // only run if vocab not found above
+  if (wotd.length === 0) {
+    const randquerygreaterthan = query(
+      collection(db, "vocabs"),
+      where("random", ">=", random),
+      orderBy("random"),
+      limit(1)
+    );
+    const greaterThanQuerySnapshot = await getDocs(randquerygreaterthan);
+    wotd = greaterThanQuerySnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+  }
+  return wotd;
 };
