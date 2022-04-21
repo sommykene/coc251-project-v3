@@ -1,4 +1,13 @@
-import { collection, addDoc, getDocs, where, query } from "firebase/firestore";
+import {
+  collection,
+  addDoc,
+  getDocs,
+  where,
+  query,
+  FieldPath,
+  getDoc,
+  doc,
+} from "firebase/firestore";
 import { db } from "./firebase";
 
 import { VocabData } from "../data/VocabData";
@@ -24,6 +33,40 @@ export const AddFiles = () => {
   });
 };
 
+// LEARN
+export const getUserLevel = async (levelID) => {
+  const levelSnap = await getDoc(doc(db, "levels", levelID));
+  const levelName = levelSnap.exists() && levelSnap.data().name;
+
+  return levelName || "beg";
+};
+
+export const getLevels = async () => {};
+
+export const getTopics = async (levelID) => {
+  const topicsSnap = await getDocs(
+    query(collection(db, "topics"), where("levelID", "==", levelID))
+  );
+  const topicsList = topicsSnap.docs.map((doc) => ({
+    topicID: doc.id,
+    ...doc.data(),
+  }));
+  return topicsList;
+};
+
+export const getLessons = async (topicID) => {
+  const lessonsSnap = await getDocs(
+    query(collection(db, "lessons"), where("topicID", "==", topicID))
+  );
+  const lessonsList = lessonsSnap.docs.map((doc) => ({
+    lessonID: doc.id,
+    ...doc.data(),
+  }));
+  return lessonsList;
+};
+
+// PHRASEBOOKS
+
 export const getPhrasebooks = async () => {
   const phrasebookSnapshot = await getDocs(collection(db, "phrasebooks"));
   const phrasebookList = phrasebookSnapshot.docs.map((doc) => ({
@@ -34,21 +77,8 @@ export const getPhrasebooks = async () => {
 };
 
 export const getPhrasebookVocab = async (id) => {
-  // const phrasebookVocabList = [];
-
   const q = query(collection(db, "vocabs"), where("phrasebookID", "==", id));
   const phrasebookVocabSnapshot = await getDocs(q);
-
-  // phrasebookVocabSnapshot.forEach(async (doc) => {
-  //   var sound = await getVocabSound(doc.id).then((url) => {
-  //     return url;
-  //   });
-  //   phrasebookVocabList.push({
-  //     id: doc.id,
-  //     sound: sound,
-  //     ...doc.data(),
-  //   });
-  // });
 
   const phrasebookVocabList = phrasebookVocabSnapshot.docs
     .map((doc) => ({
