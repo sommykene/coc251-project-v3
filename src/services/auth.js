@@ -8,7 +8,7 @@ import { doc, getDoc, setDoc } from "firebase/firestore";
 import { auth, db } from "./firebase";
 
 export const CreateUser = async (userForm) => {
-  const { email, password, firstName, username } = userForm;
+  const { email, password } = userForm;
 
   return await createUserWithEmailAndPassword(auth, email, password);
 };
