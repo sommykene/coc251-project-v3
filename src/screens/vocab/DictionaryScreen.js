@@ -104,7 +104,14 @@ function DictionaryScreen() {
 
         {/* results */}
         <div style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
-          {fetchLoading && "Loading"}
+          {fetchLoading && (
+            <p
+              className="balsamiq-ig"
+              style={{ margin: "auto", color: color.darkgrey }}
+            >
+              Loading
+            </p>
+          )}
           {!fetchLoading && results.length !== 0 ? (
             results.map((result, index) => (
               <DictionaryWordCard key={index} result={result} />

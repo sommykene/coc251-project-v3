@@ -9,6 +9,7 @@ import sound from "../../assets/sound.wav";
 
 import TranslationsGrid from "../../components/TranslationsGrid";
 import { getPhrasebookVocab } from "../../services/firestore";
+import { color } from "../../assets/colors/colors";
 
 const data = [
   { english: "Welcome", igbo: "nnọọ", sound: sound },
@@ -72,7 +73,16 @@ function PhrasebookExpanded() {
         <p className="subtitle balsamiq-ig">{title}</p>
         <Spacer height={"20px"} />
 
-        {loading ? <p>Loading</p> : <TranslationsGrid data={vocabList} />}
+        {loading ? (
+          <p
+            className="balsamiq-ig"
+            style={{ margin: "auto", color: color.darkgrey }}
+          >
+            Loading
+          </p>
+        ) : (
+          <TranslationsGrid data={vocabList} />
+        )}
       </div>
     </div>
   );
