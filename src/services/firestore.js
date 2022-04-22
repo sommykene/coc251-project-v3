@@ -14,7 +14,6 @@ import { db } from "./firebase";
 
 import { VocabData } from "../data/VocabData";
 import { getVocabSound } from "./storage";
-import { useState } from "react";
 
 export const AddFiles = () => {
   console.log("Added");
@@ -50,10 +49,12 @@ export const getTopics = async (levelID) => {
   const topicsSnap = await getDocs(
     query(collection(db, "topics"), where("levelID", "==", levelID))
   );
-  const topicsList = topicsSnap.docs.map((doc) => ({
-    topicID: doc.id,
-    ...doc.data(),
-  }));
+  const topicsList = topicsSnap.docs
+    .map((doc) => ({
+      topicID: doc.id,
+      ...doc.data(),
+    }))
+    .sort((a, b) => a.topicNumber - b.topicNumber);
   return topicsList;
 };
 
@@ -76,6 +77,46 @@ export const getLessons = async (topicID) => {
     ...doc.data(),
   }));
   return lessonsList;
+};
+
+// VOCAB
+export const getAllVocabTillLessonNumber = async (lessonNumber) => {
+  const vocabSnap = await getDocs(
+    query(collection(db, "vocabs"), where("lessonNumber", "<=", lessonNumber))
+  );
+  const vocabList = vocabSnap.docs.map((doc) => ({
+    vocabID: doc.id,
+    ...doc.data(),
+  }));
+
+  for (const doc of vocabList) {
+    var sound = await getVocabSound(doc.vocabID).then((url) => {
+      return url;
+    });
+    doc["sound"] = sound;
+  }
+
+  return vocabList;
+};
+
+export const getLessonVocab = async (lessonID) => {
+  const vocabSnap = await getDocs(
+    query(collection(db, "vocabs"), where("lessonID", "==", lessonID))
+  );
+  const vocabList = vocabSnap.docs
+    .map((doc) => ({
+      vocabID: doc.id,
+      ...doc.data(),
+    }))
+    .sort((a, b) => a.lessonOrder - b.lessonOrder);
+
+  for (const doc of vocabList) {
+    var sound = await getVocabSound(doc.vocabID).then((url) => {
+      return url;
+    });
+    doc["sound"] = sound;
+  }
+  return vocabList;
 };
 
 // PHRASEBOOKS
