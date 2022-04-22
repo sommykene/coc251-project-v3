@@ -74,10 +74,12 @@ export const getLessons = async (topicID) => {
   const lessonsSnap = await getDocs(
     query(collection(db, "lessons"), where("topicID", "==", topicID))
   );
-  const lessonsList = lessonsSnap.docs.map((doc) => ({
-    lessonID: doc.id,
-    ...doc.data(),
-  }));
+  const lessonsList = lessonsSnap.docs
+    .map((doc) => ({
+      lessonID: doc.id,
+      ...doc.data(),
+    }))
+    .sort((a, b) => a.lessonNumber - b.lessonNumber);
   return lessonsList;
 };
 
