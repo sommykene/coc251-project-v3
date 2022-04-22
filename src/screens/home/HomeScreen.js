@@ -8,6 +8,7 @@ import WordOfTheDayCard from "./componenets/WordOfTheDayCard";
 import { color } from "../../assets/colors/colors";
 import "./HomeScreen.css";
 import { icon } from "../../assets/images";
+import { AddFiles } from "../../services/firestore";
 
 function HomeScreen() {
   const { t, i18n } = useTranslation("common");
@@ -21,7 +22,9 @@ function HomeScreen() {
         <div style={{ flex: 1 }}>
           <ProfileCard home={true} />
         </div>
-
+        <button type="button" onClick={AddFiles}>
+          Click Me!
+        </button>
         {/* learn */}
         <div style={{ flex: 2 }}>
           <Link to="/learn">
