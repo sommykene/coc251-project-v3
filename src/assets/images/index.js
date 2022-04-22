@@ -17,6 +17,12 @@ export const icon = {
     black: require("./icons/audio_icon_black.png"),
   },
 
+  //vocab
+  favourite: {
+    true: require("./icons/favourite_true.png"),
+    false: require("./icons/favourite_false.png"),
+  },
+
   // sections
   learn: {
     small: {
