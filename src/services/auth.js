@@ -49,6 +49,12 @@ export const updateFavourite = async (vocabID, uid, isFavourited) => {
   }
 };
 
+export const completeLesson = async (newXP, nextLesson, uid) => {
+  const userRef = doc(db, "users", uid);
+
+  updateDoc(userRef, { xpPoints: newXP, currentLessonNumber: nextLesson });
+};
+
 export const GetUserFromFirestore = async (uid) => {
   return await getDoc(doc(db, "users", uid));
 };

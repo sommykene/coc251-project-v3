@@ -1,7 +1,7 @@
 import React from "react";
 import { color } from "../assets/colors/colors";
 
-function ProgressBar() {
+function ProgressBar({ progressState, positionIndex }) {
   return (
     <div
       style={{
@@ -30,70 +30,23 @@ function ProgressBar() {
         >
           Greeting (Ndewdoo)
         </p>
-        <div
-          style={{
-            height: "15px",
-            backgroundColor: color.green,
-            borderRadius: "50px",
-            flex: 1,
-          }}
-        ></div>
-        <div
-          style={{
-            height: "15px",
-            backgroundColor: color.green,
-            borderRadius: "50px",
-            flex: 0.5,
-          }}
-        ></div>
-        <div
-          style={{
-            height: "15px",
-            backgroundColor: color.green,
-            borderRadius: "50px",
-            flex: 0.5,
-          }}
-        ></div>
-        <div
-          style={{
-            height: "15px",
-            backgroundColor: color.green,
-            borderRadius: "50px",
-            flex: 0.5,
-          }}
-        ></div>
-        <div
-          style={{
-            height: "15px",
-            backgroundColor: color.red,
-            borderRadius: "50px",
-            flex: 0.5,
-          }}
-        ></div>
-        <div
-          style={{
-            height: "15px",
-            backgroundColor: color.yellow,
-            borderRadius: "50px",
-            flex: 0.5,
-          }}
-        ></div>
-        <div
-          style={{
-            height: "15px",
-            backgroundColor: color.lightgrey,
-            borderRadius: "50px",
-            flex: 0.5,
-          }}
-        ></div>
-        <div
-          style={{
-            height: "15px",
-            backgroundColor: color.lightgrey,
-            borderRadius: "50px",
-            flex: 1,
-          }}
-        ></div>
+        {progressState.map((x, i) => {
+          return (
+            <div
+              style={{
+                height: "15px",
+                backgroundColor:
+                  i === positionIndex
+                    ? color.yellow
+                    : x
+                    ? color.green
+                    : color.lightgrey,
+                borderRadius: "50px",
+                flex: i + 1 === 1 || i + 1 === progressState.length ? 1 : 0.5,
+              }}
+            ></div>
+          );
+        })}
       </div>
     </div>
   );

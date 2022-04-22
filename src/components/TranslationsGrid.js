@@ -3,9 +3,7 @@ import React, { useEffect } from "react";
 import AudioButton from "./AudioButton";
 import { color } from "../assets/colors/colors";
 
-function TranslationsGrid({ data }) {
-  // useEffect(() => {}, [data]);
-
+function TranslationsGrid({ data, fullWidth }) {
   const row =
     data &&
     data.map((vocab, index) => {
@@ -25,7 +23,14 @@ function TranslationsGrid({ data }) {
     });
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "10px",
+        width: fullWidth ? "100%" : "inherit",
+      }}
+    >
       <div style={styles.row}>
         <div className="card" style={styles.header}>
           English

@@ -35,7 +35,7 @@ export const AddFiles = () => {
   });
 };
 
-// LEARN
+// LEVELS
 export const getUserLevel = async (levelID) => {
   const levelSnap = await getDoc(doc(db, "levels", levelID));
   const levelName = levelSnap.exists() && levelSnap.data().name;
@@ -45,6 +45,7 @@ export const getUserLevel = async (levelID) => {
 
 export const getLevels = async () => {};
 
+// TOPICS
 export const getTopics = async (levelID) => {
   const topicsSnap = await getDocs(
     query(collection(db, "topics"), where("levelID", "==", levelID))
@@ -68,6 +69,7 @@ export const getTopicByID = async (topicID) => {
   return topicDetails;
 };
 
+// LESSON
 export const getLessons = async (topicID) => {
   const lessonsSnap = await getDocs(
     query(collection(db, "lessons"), where("topicID", "==", topicID))

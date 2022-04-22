@@ -3,13 +3,19 @@ import { color } from "../../../assets/colors/colors";
 import AudioButton from "../../../components/AudioButton";
 import sound from "../../../assets/sound.wav";
 
-function VocabDisplay() {
+function VocabDisplay({ vocab }) {
   const igbo = "kedu ka ị mere?";
   const english = "how are you?";
   return (
     <div
       className="card-ns balsamiq-ig"
-      style={{ background: color.white, maxWidth: "80%", minWidth: "60%" }}
+      style={{
+        background: color.white,
+        maxWidth: "80%",
+        minWidth: "60%",
+        paddingLeft: "20px",
+        paddingRight: "20px",
+      }}
     >
       <p
         style={{
@@ -17,10 +23,10 @@ function VocabDisplay() {
           fontSize: "60px",
         }}
       >
-        {igbo}
+        {vocab.igbo}
       </p>
 
-      <AudioButton color={"teal"} url={sound} />
+      <AudioButton color={"teal"} url={vocab.sound} />
 
       <p
         style={{
@@ -28,7 +34,7 @@ function VocabDisplay() {
           fontSize: "60px",
         }}
       >
-        {english}
+        {vocab.english}
       </p>
 
       <p
@@ -40,7 +46,7 @@ function VocabDisplay() {
           fontStyle: "italic",
         }}
       >
-        a formal greeting
+        {vocab.definition}
       </p>
     </div>
   );
