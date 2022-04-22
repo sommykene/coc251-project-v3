@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Sidebar from "../../components/Sidebar";
 import BottomColorStrip from "../../components/BottomColorStrip";
 import { useTranslation } from "react-i18next";
@@ -7,31 +7,47 @@ import { icon } from "../../assets/images";
 import { color } from "../../assets/colors/colors";
 import { Spacer } from "../../components/utils";
 import VocabCard from "./components/VocabCard";
+import { getAllVocabTillLessonNumber } from "../../services/firestore";
+import useAuth from "../../services/AuthProvider";
 
 function LessonsVocab() {
   const page = "vocab";
   const { t, i18n } = useTranslation("common");
   const navigate = useNavigate();
+  const { currentUser } = useAuth();
+  const [vocabs, setVocabs] = useState([]);
 
-  const [results, setResults] = useState([]);
+  useEffect(() => {
+    const getVocabList = async (lessonNumber) => {
+      const list = await getAllVocabTillLessonNumber(lessonNumber);
+      setVocabs(list);
+    };
+
+    getVocabList(currentUser.currentLessonNumber);
+  }, []);
+
   const [searchWord, setSearchWord] = useState("");
-  const [fetchLoading, setFetchLoading] = useState(false);
-  const [startedSearch, setStartedSearch] = useState(false);
-
-  const handleSearch = (query) => {
-    setStartedSearch(true);
-    setFetchLoading(true);
-    setResults([]);
-  };
-
-  const handleResults = (data) => {
-    setFetchLoading(false);
-    setResults(data);
-  };
 
   const handleChange = (e) => {
     setSearchWord(e.target.value);
   };
+
+  const filteredVocab = !searchWord
+    ? vocabs
+    : vocabs.filter(
+        (vocab) =>
+          vocab.english
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .toLowerCase()
+            .includes(searchWord.toLowerCase()) ||
+          vocab.igbo
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .toLowerCase()
+            .includes(searchWord.toLowerCase())
+      );
+
   return (
     <div style={{ display: "flex", gap: "30px" }}>
       <div style={{ flex: 1 }}>
@@ -69,19 +85,25 @@ function LessonsVocab() {
           placeholder="Search for a word in English or Igbo"
           value={searchWord}
           onChange={handleChange}
-          onKeyPress={(ev) => {
-            if (ev.key === "Enter") {
-              ev.preventDefault();
-              handleSearch(searchWord);
-            }
-          }}
         />
         <Spacer height={"20px"} />
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
-          <VocabCard />
-          <VocabCard />
-          <VocabCard />
-          <VocabCard />
+
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "20px",
+          }}
+        >
+          {filteredVocab.length > 0 ? (
+            filteredVocab.map((vocab, index) => {
+              return <VocabCard key={index} vocab={vocab} />;
+            })
+          ) : (
+            <p className="balsamiq-ig" style={{ margin: "auto" }}>
+              Loading
+            </p>
+          )}
         </div>
       </div>
     </div>

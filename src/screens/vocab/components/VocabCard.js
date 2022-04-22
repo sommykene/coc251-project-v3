@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { color } from "../../../assets/colors/colors";
 import AudioButton from "../../../components/AudioButton";
 import sound from "../../../assets/sound.wav";
 import useCollapse from "react-collapsed";
 import { icon } from "../../../assets/images";
 import { Spacer } from "../../../components/utils";
+import useAuth from "../../../services/AuthProvider";
+import { updateFavourite } from "../../../services/auth";
 
-function VocabCard({ result }) {
+function VocabCard({ vocab }) {
+  const { currentUser } = useAuth();
+  const [isFavourited, setIsFavourited] = useState(
+    currentUser.favouriteVocab.includes(vocab.vocabID)
+  );
+
+  const handleFavourite = (event) => {
+    if (!event) var event = window.event;
+    event.cancelBubble = true;
+    if (event.stopPropagation) event.stopPropagation();
+    updateFavourite(vocab.vocabID, currentUser.uid, !isFavourited);
+    setIsFavourited(!isFavourited);
+  };
+
   const {
     getCollapseProps,
     getToggleProps,
@@ -28,9 +43,17 @@ function VocabCard({ result }) {
         style={{
           cursor: "pointer",
           width: "100%",
+          position: "relative",
         }}
         {...getToggleProps()}
       >
+        <div>
+          <img
+            style={{ position: "absolute", right: 0, bottom: 0 }}
+            src={isFavourited ? icon.favourite.true : icon.favourite.false}
+            onClick={(e) => handleFavourite(e)}
+          />
+        </div>
         <p
           className="balsamiq-ig"
           style={{
@@ -39,7 +62,7 @@ function VocabCard({ result }) {
             fontSize: "20px",
           }}
         >
-          When?
+          {vocab.english}
         </p>
         <p
           className="balsamiq-ig"
@@ -51,7 +74,7 @@ function VocabCard({ result }) {
             color: color.red,
           }}
         >
-          Mgbe?
+          {vocab.igbo}
         </p>
         <span
           style={{
@@ -61,9 +84,10 @@ function VocabCard({ result }) {
             width: "100%",
           }}
         >
-          at all times; on all occasions
+          {vocab.description}
         </span>
         <Spacer height="15px" />
+
         <img src={isExpanded ? icon.vocab.collapse : icon.vocab.expand} />
       </div>
       <div {...getCollapseProps()}>
@@ -71,22 +95,21 @@ function VocabCard({ result }) {
           <Spacer height="15px" />
           <div style={styles.breakline}></div>
           <Spacer height="10px" />
-          <span>When will you travel?</span>
+          <span>{vocab.examples.english}</span>
           <Spacer height="5px" />
           <span
             style={{
               color: color.red,
             }}
           >
-            Kedu mgbe ị ga-eme eje gị?
+            {vocab.examples.igbo}
           </span>
           <Spacer height="25px" />
-          <span style={{ fontWeight: "bold" }}>Lesson 12</span>
+          <span style={{ fontWeight: "bold" }}>
+            Lesson {vocab.lessonNumber}
+          </span>
           <Spacer height="10px" />
-          <AudioButton url={sound} width="40px" />
-          {/* {result && result.pronunciation && (
-            <AudioButton url={sound} width="50px" />
-          )} */}
+          <AudioButton url={vocab.sound} width="40px" />
         </div>
       </div>
     </div>
