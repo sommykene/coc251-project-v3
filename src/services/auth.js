@@ -4,7 +4,14 @@ import {
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
-import { doc, getDoc, setDoc } from "firebase/firestore";
+import {
+  arrayRemove,
+  arrayUnion,
+  doc,
+  getDoc,
+  setDoc,
+  updateDoc,
+} from "firebase/firestore";
 import { auth, db } from "./firebase";
 
 export const CreateUser = async (userForm) => {
@@ -20,7 +27,26 @@ export const AddUserToFirestore = async (user, email, firstName, username) => {
     username: username,
     email: email,
     xpPoints: 0,
+    dateLastActive: new Date(),
+    streak: 1,
+    currentLessonNumber: 1,
+    levelID: "BhKw77gnJl1tM5C79fJ9",
+    favouriteVocab: [],
   });
+};
+
+export const updateFavourite = async (vocabID, uid, isFavourited) => {
+  const userRef = doc(db, "users", uid);
+
+  if (isFavourited === true) {
+    updateDoc(userRef, {
+      favouriteVocab: arrayUnion(vocabID),
+    });
+  } else if (isFavourited === false) {
+    updateDoc(userRef, {
+      favouriteVocab: arrayRemove(vocabID),
+    });
+  }
 };
 
 export const GetUserFromFirestore = async (uid) => {

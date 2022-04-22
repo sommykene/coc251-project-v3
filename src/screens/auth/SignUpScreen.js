@@ -15,6 +15,11 @@ const INITIAL_USER = {
   email: "",
   firstName: "",
   xp_points: 0,
+  dateLastActive: new Date(),
+  streak: 1,
+  currentLessonNumber: 1,
+  levelID: "BhKw77gnJl1tM5C79fJ9",
+  favouriteVocab: [],
 };
 
 function SignUpScreen() {
