@@ -74,7 +74,18 @@ function PhrasebookExpanded() {
         <p className="subtitle balsamiq-ig">{title}</p>
         <Spacer height={"20px"} />
 
-        {loading ? <Loading /> : <TranslationsGrid data={vocabList} />}
+        {loading ? (
+          <Loading />
+        ) : vocabList.length > 0 ? (
+          <TranslationsGrid data={vocabList} />
+        ) : (
+          <p
+            className="balsamiq-ig"
+            style={{ fontStyle: "italic", color: color.darkgrey }}
+          >
+            No Vocabulary Available, Please Check Back Another Time
+          </p>
+        )}
       </div>
     </div>
   );
