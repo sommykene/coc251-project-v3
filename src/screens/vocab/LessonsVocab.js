@@ -9,6 +9,7 @@ import { Spacer } from "../../components/utils";
 import VocabCard from "./components/VocabCard";
 import { getAllVocabTillLessonNumber } from "../../services/firestore";
 import useAuth from "../../services/AuthProvider";
+import Loading from "../../components/Loading";
 
 function LessonsVocab() {
   const page = "vocab";
@@ -100,9 +101,7 @@ function LessonsVocab() {
               return <VocabCard key={index} vocab={vocab} />;
             })
           ) : (
-            <p className="balsamiq-ig" style={{ margin: "auto" }}>
-              Loading
-            </p>
+            <Loading />
           )}
         </div>
       </div>
