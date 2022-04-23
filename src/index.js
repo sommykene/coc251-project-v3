@@ -42,28 +42,26 @@ i18next.init({
 const container = document.getElementById("root");
 const root = createRoot(container);
 root.render(
-  <React.StrictMode>
-    <Router>
-      <AuthProvider>
-        <I18nextProvider i18n={i18next}>
-          <Routes>
-            <Route path="/*" element={<App />} />
-            <Route path="/login" element={<LoginScreen />} />
-            <Route path="/signup" element={<SignUpScreen />} />
-          </Routes>
-          <ToastContainer
-            position="bottom-right"
-            autoClose={5000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-          />
-        </I18nextProvider>
-      </AuthProvider>
-    </Router>
-  </React.StrictMode>
+  <Router>
+    <AuthProvider>
+      <I18nextProvider i18n={i18next}>
+        <Routes>
+          <Route path="/*" element={<App />} />
+          <Route path="/login" element={<LoginScreen />} />
+          <Route path="/signup" element={<SignUpScreen />} />
+        </Routes>
+        <ToastContainer
+          position="bottom-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
+      </I18nextProvider>
+    </AuthProvider>
+  </Router>
 );
