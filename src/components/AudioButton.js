@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { icon } from "../assets/images";
 
-const useAudio = (url) => {
+const useAudio = (url, play) => {
   const [audio] = useState(new Audio(url));
-  const [playing, setPlaying] = useState(false);
+  const [playing, setPlaying] = useState(play);
 
   const toggle = () => setPlaying(!playing);
 
@@ -21,8 +21,8 @@ const useAudio = (url) => {
   return [playing, toggle];
 };
 
-const AudioButton = ({ url, width, fillSpace, color }) => {
-  const [playing, toggle] = useAudio(url);
+const AudioButton = ({ url, width, fillSpace, color, play }) => {
+  const [playing, toggle] = useAudio(url, play || false);
 
   return (
     <div

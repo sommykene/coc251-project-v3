@@ -25,7 +25,12 @@ function VocabDisplay({ vocab }) {
         {vocab.igbo}
       </p>
 
-      <AudioButton key={vocab.vocabID} color={"teal"} url={vocab.sound} />
+      <AudioButton
+        key={vocab.vocabID}
+        color={"teal"}
+        url={vocab.sound}
+        play={true}
+      />
 
       <p
         style={{
