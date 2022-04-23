@@ -84,8 +84,8 @@ function CultureHomeScreen() {
               <Loading />
             ) : (
               imageList.length > 0 &&
-              imageList.map((image) => {
-                return <ImageExpand url={image} />;
+              imageList.map((image, index) => {
+                return <ImageExpand key={index} url={image} />;
               })
             )}
           </div>
