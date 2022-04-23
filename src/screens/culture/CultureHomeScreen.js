@@ -35,15 +35,13 @@ function CultureHomeScreen() {
         <span className="pagetitle balsamiq-ig">{t("culture")}</span>
         <div style={styles.main}>
           {/* spotify */}
-          <p style={{ marginTop: "20px" }} className="balsamiq-ig subtitle">
-            Igbo Music Spotify Playlist
-          </p>
+          <p className="balsamiq-ig subtitle">Igbo Music Spotify Playlist</p>
           <div style={{ position: "relative" }}>
             <div
               className="card-ns"
               style={{
                 width: "100%",
-                height: "80px",
+                height: "380px",
                 textAlign: "center",
                 backgroundColor: color.white,
                 position: "absolute",
@@ -65,7 +63,7 @@ function CultureHomeScreen() {
           </div>
 
           {/* infographics */}
-          <p className="balsamiq-ig subtitle">
+          <p style={{ marginTop: "20px" }} className="balsamiq-ig subtitle">
             Igbo Infographics (In Partnership with OkwuID)
           </p>
           <div

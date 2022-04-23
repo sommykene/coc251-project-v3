@@ -13,6 +13,7 @@ function VocabDisplay({ vocab }) {
         minWidth: "60%",
         paddingLeft: "20px",
         paddingRight: "20px",
+        height: "fit-content",
       }}
     >
       <p
