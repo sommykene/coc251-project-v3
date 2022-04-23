@@ -83,6 +83,19 @@ export const getLessons = async (topicID) => {
   return lessonsList;
 };
 
+export const getLessonsTillNumber = async (lessonNumber) => {
+  const lessonsSnap = await getDocs(
+    query(collection(db, "lessons"), where("lessonNumber", "<=", lessonNumber))
+  );
+  const lessonsList = lessonsSnap.docs
+    .map((doc) => ({
+      lessonID: doc.id,
+      ...doc.data(),
+    }))
+    .sort((a, b) => a.lessonNumber - b.lessonNumber);
+  return lessonsList;
+};
+
 // VOCAB
 export const getAllVocabTillLessonNumber = async (lessonNumber) => {
   const vocabSnap = await getDocs(
