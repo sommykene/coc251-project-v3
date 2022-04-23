@@ -4,7 +4,7 @@ import { color } from "../../assets/colors/colors";
 import BottomColorStrip from "../../components/BottomColorStrip";
 import ImageExpand from "../../components/ImageExpand";
 import Sidebar from "../../components/Sidebar";
-import { getCultureImages } from "../../services/storage";
+import { getCultureImages } from "../../firebaseapi/storage";
 import Loading from "../../components/Loading";
 import { icon } from "../../assets/images";
 

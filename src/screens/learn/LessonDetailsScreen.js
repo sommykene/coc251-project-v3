@@ -10,7 +10,7 @@ import DetailsTopicCard from "./components/DetailsTopicCard";
 import DetailsLessonNotesCard from "./components/DetailsLessonNotesCard";
 import DetailsLessonCard from "./components/DetailsLessonCard";
 import { icon } from "../../assets/images";
-import { getLessons } from "../../services/firestore";
+import { getLessons } from "../../firebaseapi/firestore";
 import useAuth from "../../services/AuthProvider";
 
 function LessonDetailsScreen() {

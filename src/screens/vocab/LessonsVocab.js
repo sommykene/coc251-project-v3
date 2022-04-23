@@ -7,7 +7,7 @@ import { icon } from "../../assets/images";
 import { color } from "../../assets/colors/colors";
 import { Spacer } from "../../components/utils";
 import VocabCard from "./components/VocabCard";
-import { getAllVocabTillLessonNumber } from "../../services/firestore";
+import { getAllVocabTillLessonNumber } from "../../firebaseapi/firestore";
 import useAuth from "../../services/AuthProvider";
 import Loading from "../../components/Loading";
 

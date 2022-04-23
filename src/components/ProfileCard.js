@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { color } from "../assets/colors/colors";
 
 import profileImage from "../assets/images/profile.png";
-import { SignOut } from "../services/auth";
+import { SignOut } from "../firebaseapi/auth";
 import useAuth from "../services/AuthProvider";
 import ToggleSwitch from "./ToggleSwitch";
 import { Spacer } from "./utils";

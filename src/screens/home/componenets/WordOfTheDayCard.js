@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { color } from "../../../assets/colors/colors";
 import { Spacer } from "../../../components/utils";
-import { getWordOfTheDay } from "../../../services/firestore";
+import { getWordOfTheDay } from "../../../firebaseapi/firestore";
 
 function hasOneDayPassed() {
   var date = new Date().toLocaleDateString();

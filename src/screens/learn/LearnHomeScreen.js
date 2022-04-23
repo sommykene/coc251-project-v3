@@ -7,7 +7,7 @@ import TopicCard from "./components/TopicCard";
 import BottomColorStrip from "../../components/BottomColorStrip";
 import { lessonsData } from "../../data/lessonsData";
 import useAuth from "../../services/AuthProvider";
-import { getTopics, getUserLevel } from "../../services/firestore";
+import { getTopics, getUserLevel } from "../../firebaseapi/firestore";
 
 function LearnHomeScreen() {
   const { t, i18n } = useTranslation("common");

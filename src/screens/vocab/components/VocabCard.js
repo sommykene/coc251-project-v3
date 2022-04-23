@@ -6,7 +6,7 @@ import useCollapse from "react-collapsed";
 import { icon } from "../../../assets/images";
 import { Spacer } from "../../../components/utils";
 import useAuth from "../../../services/AuthProvider";
-import { updateFavourite } from "../../../services/auth";
+import { updateFavourite } from "../../../firebaseapi/auth";
 
 function VocabCard({ vocab }) {
   const { currentUser } = useAuth();

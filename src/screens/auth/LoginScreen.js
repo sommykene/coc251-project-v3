@@ -4,7 +4,7 @@ import { color } from "../../assets/colors/colors";
 import logo from "../../assets/images/logo.svg";
 import { Spacer } from "../../components/utils";
 
-import { Login } from "../../services/auth";
+import { Login } from "../../firebaseapi/auth";
 
 import { toast } from "react-toastify";
 

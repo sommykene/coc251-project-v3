@@ -8,7 +8,7 @@ import WordOfTheDayCard from "./componenets/WordOfTheDayCard";
 import { color } from "../../assets/colors/colors";
 import "./HomeScreen.css";
 import { icon } from "../../assets/images";
-import { AddFiles } from "../../services/firestore";
+import { AddFiles } from "../../firebaseapi/firestore";
 
 function HomeScreen() {
   const { t, i18n } = useTranslation("common");

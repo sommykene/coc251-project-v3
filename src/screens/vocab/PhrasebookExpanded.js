@@ -8,7 +8,7 @@ import { Spacer } from "../../components/utils";
 import sound from "../../assets/sound.wav";
 
 import TranslationsGrid from "../../components/TranslationsGrid";
-import { getPhrasebookVocab } from "../../services/firestore";
+import { getPhrasebookVocab } from "../../firebaseapi/firestore";
 import { color } from "../../assets/colors/colors";
 import Loading from "../../components/Loading";
 

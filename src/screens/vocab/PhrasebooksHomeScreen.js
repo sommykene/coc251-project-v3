@@ -7,7 +7,7 @@ import { icon } from "../../assets/images";
 import { color } from "../../assets/colors/colors";
 import { Spacer } from "../../components/utils";
 import PhrasebookCard from "./components/PhrasebookCard";
-import { getPhrasebooks } from "../../services/firestore";
+import { getPhrasebooks } from "../../firebaseapi/firestore";
 
 function PhrasebooksHomeScreen() {
   const page = "vocab";

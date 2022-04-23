@@ -9,8 +9,8 @@ import { useLocation, useNavigate, useParams } from "react-router-dom";
 import LeaveButton from "../../components/LeaveButton";
 import HomeButton from "../../components/HomeButton";
 import ProgressBar from "../../components/ProgressBar";
-import { getLessonVocab } from "../../services/firestore";
-import { completeLesson } from "../../services/auth";
+import { getLessonVocab } from "../../firebaseapi/firestore";
+import { completeLesson } from "../../firebaseapi/auth";
 import useAuth from "../../services/AuthProvider";
 
 function LessonLayoutPage() {

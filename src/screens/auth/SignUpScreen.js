@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { color } from "../../assets/colors/colors";
 import logo from "../../assets/images/logo.svg";
 import { Spacer } from "../../components/utils";
-import { AddUserToFirestore, CreateUser } from "../../services/auth";
+import { AddUserToFirestore, CreateUser } from "../../firebaseapi/auth";
 
 import { toast } from "react-toastify";
 
