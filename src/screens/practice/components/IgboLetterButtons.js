@@ -1,18 +1,34 @@
 import React from "react";
 import { color } from "../../../assets/colors/colors";
 
-function IgboLetterButtons({ addInput }) {
+function IgboLetterButtons({ addInput, setFocus }) {
   return (
     <div style={{ display: "flex", gap: "50px" }}>
-      <LetterKey letter="ị" handleInput={(letter) => addInput(letter)} />
-      <LetterKey letter="ṅ" handleInput={(letter) => addInput(letter)} />
-      <LetterKey letter="ọ" handleInput={(letter) => addInput(letter)} />
-      <LetterKey letter="ụ" handleInput={(letter) => addInput(letter)} />
+      <LetterKey
+        letter="ị"
+        handleInput={(letter) => addInput(letter)}
+        handleFocus={setFocus}
+      />
+      <LetterKey
+        letter="ṅ"
+        handleInput={(letter) => addInput(letter)}
+        handleFocus={() => setFocus()}
+      />
+      <LetterKey
+        letter="ọ"
+        handleInput={(letter) => addInput(letter)}
+        handleFocus={() => setFocus()}
+      />
+      <LetterKey
+        letter="ụ"
+        handleInput={(letter) => addInput(letter)}
+        handleFocus={() => setFocus()}
+      />
     </div>
   );
 }
 
-const LetterKey = ({ letter, handleInput }) => {
+const LetterKey = ({ letter, handleInput, handleFocus }) => {
   return (
     <div
       className="card balsamiq-ig"
@@ -23,7 +39,10 @@ const LetterKey = ({ letter, handleInput }) => {
         fontSize: "25px",
         cursor: "pointer",
       }}
-      onClick={() => handleInput(letter)}
+      onClick={() => {
+        handleInput(letter);
+        handleFocus();
+      }}
     >
       {letter}
     </div>
