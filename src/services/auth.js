@@ -9,6 +9,7 @@ import {
   arrayUnion,
   doc,
   getDoc,
+  onSnapshot,
   setDoc,
   updateDoc,
 } from "firebase/firestore";
@@ -55,8 +56,10 @@ export const completeLesson = async (newXP, nextLesson, uid) => {
   updateDoc(userRef, { xpPoints: newXP, currentLessonNumber: nextLesson });
 };
 
-export const GetUserFromFirestore = async (uid) => {
-  return await getDoc(doc(db, "users", uid));
+export const GetUserFromFirestore = (uid, callback) => {
+  onSnapshot(doc(db, "users", uid), (doc) => {
+    callback(doc.data());
+  });
 };
 
 export const Login = async (userForm) => {

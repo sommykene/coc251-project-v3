@@ -16,16 +16,19 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user != null) {
-        GetUserFromFirestore(user.uid).then((doc) => {
-          setCurrentUser({ ...user, ...doc.data() });
-          setLoading(false);
-        });
+        GetUserFromFirestore(user.uid, (data) =>
+          setCurrentUser({ ...user, ...data })
+        );
+        setLoading(false);
       } else {
         setCurrentUser(user);
         setLoading(false);
       }
     });
-    return unsubscribe;
+
+    return () => {
+      unsubscribe();
+    };
   }, []);
 
   const value = { currentUser, loading };
