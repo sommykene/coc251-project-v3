@@ -5,7 +5,7 @@ import { color } from "../../../assets/colors/colors";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-function DetailsLessonCard({ title, lessonID, status }) {
+function DetailsLessonCard({ title, lessonID, status, lessonNumber }) {
   let params = useParams();
   return (
     <div
@@ -25,6 +25,7 @@ function DetailsLessonCard({ title, lessonID, status }) {
                 ? `/learn/${params.topicid}/details?tab=viewlessons`
                 : `/learn/${params.topicid}/lesson/${lessonID}`
             }
+            state={{ lessonNumber: lessonNumber }}
           >
             <p
               style={{

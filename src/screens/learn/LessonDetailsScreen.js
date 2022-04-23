@@ -84,6 +84,7 @@ function LessonDetailsScreen() {
                     <DetailsLessonCard
                       key={index}
                       lessonID={lesson.lessonID}
+                      lessonNumber={lesson.lessonNumber}
                       title={index + 1 + ". " + lesson.name}
                       status={
                         lesson.lessonNumber < currentUser.currentLessonNumber

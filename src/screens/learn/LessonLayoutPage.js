@@ -5,7 +5,7 @@ import { icon } from "../../assets/images";
 import BottomColorStrip from "../../components/BottomColorStrip";
 import { useTranslation } from "react-i18next";
 import VocabDisplay from "./components/VocabDisplay";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import LeaveButton from "../../components/LeaveButton";
 import HomeButton from "../../components/HomeButton";
 import ProgressBar from "../../components/ProgressBar";
@@ -18,6 +18,7 @@ function LessonLayoutPage() {
   const params = useParams();
   const { currentUser } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const [progressState, setProgressState] = useState([]);
   const [lessonIndex, setLessonIndex] = useState(0);
@@ -46,9 +47,19 @@ function LessonLayoutPage() {
   };
 
   const handleFinished = () => {
+    // replaying completed lessons wont change the users currentLevelNumber
+    const userCurrentLevel =
+      location.state.lessonNumber < currentUser.currentLessonNumber
+        ? currentUser.currentLessonNumber
+        : currentUser.currentLessonNumber + 1;
+
+    // replaying a lesson is 50xp, completing a new lesson is 100xp
+    const xpGain =
+      location.state.lessonNumber < currentUser.currentLessonNumber ? 50 : 100;
+
     completeLesson(
-      currentUser.xpPoints + 100,
-      currentUser.currentLessonNumber + 1,
+      currentUser.xpPoints + xpGain,
+      userCurrentLevel,
       currentUser.uid
     );
     navigate(`/learn/${params.topicid}/details?tab=viewlessons`);
