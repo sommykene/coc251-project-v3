@@ -90,9 +90,9 @@ function LessonLayoutPage() {
           <BottomColorStrip page={"learn"} />
 
           <ProgressBar
-            noOfSlides={vocabList.length + 2 || 2}
             progressState={progressState}
             positionIndex={lessonIndex}
+            type="learn"
           />
           <div style={{ display: "flex", height: "100%" }}>
             <div
@@ -146,7 +146,7 @@ function LessonLayoutPage() {
                     }}
                   >
                     <img src={icon.check} onClick={() => handleFinished()} />
-                    <p className="balsamiq-ig subtitle">{t("check")}</p>
+                    <p className="balsamiq-ig subtitle">Finish</p>
                   </div>
                 </>
               ) : (
