@@ -22,9 +22,9 @@ function HomeScreen() {
         <div style={{ flex: 1 }}>
           <ProfileCard home={true} />
         </div>
-        <button type="button" onClick={AddFiles}>
+        {/* <button type="button" onClick={AddFiles}>
           Click Me!
-        </button>
+        </button> */}
         {/* learn */}
         <div style={{ flex: 2 }}>
           <Link to="/learn">
