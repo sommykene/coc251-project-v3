@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { color } from "../assets/colors/colors";
 
 function ImageExpand({ url }) {
@@ -6,7 +6,6 @@ function ImageExpand({ url }) {
 
   const handleShowDialog = () => {
     setIsOpen(!isOpen);
-    console.log("cliked");
   };
 
   return (
@@ -24,7 +23,7 @@ function ImageExpand({ url }) {
         <dialog
           className="dialog"
           style={{
-            position: "absolute",
+            position: "fixed",
             boxShadow: "0 8px 6px -6px black",
             left: "20%",
             top: "10%",
@@ -38,6 +37,7 @@ function ImageExpand({ url }) {
             onClick={handleShowDialog}
             alt="no image"
           />
+          <p>click to close</p>
         </dialog>
       )}
     </div>

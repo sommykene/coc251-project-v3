@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { color } from "../assets/colors/colors";
 
@@ -33,7 +33,7 @@ function ProfileCard({ home }) {
       }}
       className="card balsamiq"
     >
-      <img style={styles.profileImage} src={profileImage} />
+      <img style={styles.profileImg} src={profileImage} />
       <span style={{ margin: "10px 0" }}>
         {currentUser && currentUser.firstName}
       </span>
@@ -71,8 +71,10 @@ const styles = {
     alignItems: "center",
     backgroundColor: color.white,
   },
-  profileImage: {
+  profileImg: {
     marginBottom: "10px",
+    minHeight: "50px",
+    maxHeight: "105px",
   },
   xppoints: {
     backgroundColor: color.yellow,
