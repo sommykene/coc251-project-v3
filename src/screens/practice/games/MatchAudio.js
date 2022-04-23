@@ -73,7 +73,7 @@ function MatchAudio() {
   };
 
   const handleNext = () => {
-    setPracticeIndex(Math.min(practiceIndex + 1, vocabList.length + 1));
+    setPracticeIndex(Math.min(practiceIndex + 1, 11));
     setChecking(false);
     setSelectedAnswerIndex();
     setCorrectVocabIndex();
@@ -150,7 +150,7 @@ function MatchAudio() {
                 justifyContent: "center",
               }}
             >
-              {practiceIndex !== vocabList.length + 1 ? (
+              {practiceIndex !== 11 ? (
                 <>
                   <TextDisplay
                     text={correctVocab && correctVocab.english}
@@ -209,7 +209,7 @@ function MatchAudio() {
                 flexDirection: "column",
               }}
             >
-              {practiceIndex === vocabList.length + 1 ? (
+              {practiceIndex === 11 ? (
                 <>
                   <img src={icon.check} onClick={() => handleFinished()} />
                   <p className="balsamiq-ig subtitle">Finish</p>
