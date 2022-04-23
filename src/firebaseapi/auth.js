@@ -56,6 +56,12 @@ export const completeLesson = async (newXP, nextLesson, uid) => {
   updateDoc(userRef, { xpPoints: newXP, currentLessonNumber: nextLesson });
 };
 
+export const completePractice = async (newXP, uid) => {
+  const userRef = doc(db, "users", uid);
+
+  updateDoc(userRef, { xpPoints: newXP });
+};
+
 export const GetUserFromFirestore = (uid, callback) => {
   onSnapshot(doc(db, "users", uid), (doc) => {
     callback(doc.data());
