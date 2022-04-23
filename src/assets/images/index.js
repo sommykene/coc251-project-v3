@@ -23,6 +23,16 @@ export const icon = {
     false: require("./icons/favourite_false.png"),
   },
 
+  // games
+  games: {
+    ma: require("./games/ma.png"),
+    mt: require("./games/mt.png"),
+    sa: require("./games/sa.png"),
+    mma: require("./games/mma.png"),
+    ta: require("./games/ta.png"),
+    tt: require("./games/tt.png"),
+  },
+
   // sections
   learn: {
     small: {
