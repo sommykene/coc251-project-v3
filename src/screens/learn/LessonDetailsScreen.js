@@ -11,13 +11,14 @@ import DetailsLessonNotesCard from "./components/DetailsLessonNotesCard";
 import DetailsLessonCard from "./components/DetailsLessonCard";
 import { icon } from "../../assets/images";
 import { getLessons } from "../../services/firestore";
+import useAuth from "../../services/AuthProvider";
 
 function LessonDetailsScreen() {
   const { t, i18n } = useTranslation("common");
   let params = useParams();
   let [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
-
+  const { currentUser } = useAuth();
   const page = "learn";
 
   const [lessonsList, setLessonsList] = useState([]);
@@ -84,6 +85,14 @@ function LessonDetailsScreen() {
                       key={index}
                       lessonID={lesson.lessonID}
                       title={index + 1 + ". " + lesson.name}
+                      status={
+                        lesson.lessonNumber < currentUser.currentLessonNumber
+                          ? "completed"
+                          : currentUser.currentLessonNumber ===
+                            lesson.lessonNumber
+                          ? "current"
+                          : "locked"
+                      }
                     />
                   );
                 })
