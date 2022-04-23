@@ -1,7 +1,9 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { color } from "../assets/colors/colors";
 
-function ProgressBar({ progressState, positionIndex }) {
+function ProgressBar({ progressState, positionIndex, type }) {
+  const { t } = useTranslation("common");
   return (
     <div
       style={{
@@ -28,22 +30,46 @@ function ProgressBar({ progressState, positionIndex }) {
           }}
           className="subtitle balsamiq-ig"
         >
-          Greeting (Ndewdoo)
+          {type === "learn" ? t("learn") : t("practice")}
         </p>
         {progressState.map((x, i) => {
+          let progressColor = color.lightgrey;
+
+          switch (type) {
+            case "learn":
+              progressColor =
+                i === positionIndex
+                  ? color.yellow
+                  : x
+                  ? color.green
+                  : color.lightgrey;
+              break;
+            case "practice":
+              progressColor =
+                i === positionIndex
+                  ? color.yellow
+                  : x === null
+                  ? color.lightgrey
+                  : x
+                  ? color.green
+                  : color.red;
+              break;
+            default:
+              break;
+          }
+
           return (
             <div
               key={i}
               style={{
                 height: "15px",
-                backgroundColor:
-                  i === positionIndex
-                    ? color.yellow
-                    : x
-                    ? color.green
-                    : color.lightgrey,
+                backgroundColor: progressColor,
                 borderRadius: "50px",
-                flex: i + 1 === 1 || i + 1 === progressState.length ? 1 : 0.5,
+                flex:
+                  type === "learn" &&
+                  (i + 1 === 1 || i + 1 === progressState.length)
+                    ? 1
+                    : 0.5,
               }}
             ></div>
           );
