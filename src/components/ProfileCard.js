@@ -29,7 +29,7 @@ function ProfileCard({ home }) {
         padding: "15px 0",
         alignItems: "center",
         backgroundColor: color.white,
-        height: !home && "320px",
+        height: !home && "350px",
       }}
       className="card balsamiq"
     >
@@ -40,7 +40,7 @@ function ProfileCard({ home }) {
       <span>@{currentUser && currentUser.username}</span>
       <XpPointCard />
       <ToggleSwitch />
-      <Spacer height="10px" />
+      <Spacer height="15px" />
       <span
         style={{
           cursor: "pointer",
