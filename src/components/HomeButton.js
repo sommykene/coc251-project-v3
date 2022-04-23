@@ -12,7 +12,7 @@ function HomeButton() {
       <div
         className="balsamiq-ig"
         style={{
-          position: "absolute",
+          position: "fixed",
           bottom: "50px",
           left: "50px",
           width: "fit-content",

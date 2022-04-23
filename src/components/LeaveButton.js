@@ -11,7 +11,7 @@ function LeaveButton({ link }) {
       <div
         className="balsamiq-ig"
         style={{
-          position: "absolute",
+          position: "fixed",
           bottom: "50px",
           right: "50px",
           width: "fit-content",
