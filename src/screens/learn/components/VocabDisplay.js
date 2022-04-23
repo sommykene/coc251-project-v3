@@ -4,8 +4,6 @@ import AudioButton from "../../../components/AudioButton";
 import sound from "../../../assets/sound.wav";
 
 function VocabDisplay({ vocab }) {
-  const igbo = "kedu ka ị mere?";
-  const english = "how are you?";
   return (
     <div
       className="card-ns balsamiq-ig"
@@ -26,7 +24,7 @@ function VocabDisplay({ vocab }) {
         {vocab.igbo}
       </p>
 
-      <AudioButton color={"teal"} url={vocab.sound} />
+      <AudioButton key={vocab.vocabID} color={"teal"} url={vocab.sound} />
 
       <p
         style={{
@@ -44,6 +42,7 @@ function VocabDisplay({ vocab }) {
           color: color.darkgrey,
           fontSize: "26px",
           fontStyle: "italic",
+          textAlign: "center",
         }}
       >
         {vocab.definition}
