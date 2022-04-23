@@ -72,12 +72,12 @@ const PracticeRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<PracticeHomeScreen />} />
-      <Route path="/ma" element={<MatchAudio />} />
-      <Route path="/mma" element={<MatchMultipleAudio />} />
-      <Route path="/mt" element={<MatchTranslations />} />
-      <Route path="/sa" element={<SpellAudio />} />
-      <Route path="/ta" element={<TranslateAudio />} />
-      <Route path="/tt" element={<TranslateText />} />
+      <Route path="/ma/:lessonid" element={<MatchAudio />} />
+      <Route path="/mma/:lessonid" element={<MatchMultipleAudio />} />
+      <Route path="/mt/:lessonid" element={<MatchTranslations />} />
+      <Route path="/sa/:lessonid" element={<SpellAudio />} />
+      <Route path="/ta/:lessonid" element={<TranslateAudio />} />
+      <Route path="/tt/:lessonid" element={<TranslateText />} />
     </Routes>
   );
 };
