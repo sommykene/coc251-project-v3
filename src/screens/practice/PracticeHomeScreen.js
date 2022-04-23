@@ -57,19 +57,6 @@ function PracticeHomeScreen() {
             </div>
           </div>
 
-          {/* Matching the Translations */}
-          <div
-            style={styles.options}
-            onClick={() =>
-              handleGameSelected("mt", "Matching the Translations")
-            }
-          >
-            <div className="card" style={styles.innercard}>
-              <img style={styles.image} src={icon.games.mt} />
-              <p className="balsamiq-ig subtitle">Matching the Translations</p>
-            </div>
-          </div>
-
           {/* Spell Out What You Hear */}
           <div
             style={styles.options}
@@ -81,20 +68,26 @@ function PracticeHomeScreen() {
             </div>
           </div>
 
-          {/* LOCKED */}
-          {/* Matching Multiple Audio */}
-          <div style={styles.options}>
-            <LockedOverlay xpCost={1000} />
+          {/* Translating the Word or Phrase */}
+          <div
+            style={styles.options}
+            onClick={() =>
+              handleGameSelected("tt", "Translating the Word or Phrase")
+            }
+          >
             <div className="card" style={styles.innercard}>
-              <img style={styles.image} src={icon.games.mma} />
-              <p className="balsamiq-ig subtitle">Matching Multiple Audio</p>
+              <img style={styles.image} src={icon.games.tt} />
+              <p className="balsamiq-ig subtitle">
+                Translating the Word or Phrase
+              </p>
             </div>
           </div>
 
+          {/* LOCKED */}
           {/* Translating Audio to a Word or Phrase */}
           <div style={styles.options}>
             <div className="card" style={styles.innercard}>
-              <LockedOverlay xpCost={1100} />
+              <LockedOverlay xpCost={1000} />
               <img style={styles.image} src={icon.games.ta} />
               <p className="balsamiq-ig subtitle">
                 Translating Audio to a Word or Phrase
@@ -102,18 +95,23 @@ function PracticeHomeScreen() {
             </div>
           </div>
 
-          {/* Translating the Word or Phrase */}
+          {/* Matching Multiple Audio */}
+          <div style={styles.options}>
+            <LockedOverlay xpCost={1100} />
+            <div className="card" style={styles.innercard}>
+              <img style={styles.image} src={icon.games.mma} />
+              <p className="balsamiq-ig subtitle">Matching Multiple Audio</p>
+            </div>
+          </div>
+
+          {/* Matching the Translations */}
           <div style={styles.options}>
             <div className="card" style={styles.innercard}>
               <LockedOverlay xpCost={1200} />
-              <img style={styles.image} src={icon.games.tt} />
-              <p className="balsamiq-ig subtitle">
-                Translating the Word or Phrase
-              </p>
+              <img style={styles.image} src={icon.games.mt} />
+              <p className="balsamiq-ig subtitle">Matching the Translations</p>
             </div>
           </div>
-          <div style={styles.options}></div>
-          <div style={styles.options}></div>
         </div>
       </div>
     </div>
