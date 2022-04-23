@@ -17,6 +17,11 @@ import LoginScreen from "./screens/auth/LoginScreen";
 import SignUpScreen from "./screens/auth/SignUpScreen";
 
 import { AuthProvider } from "./services/AuthProvider";
+// React Toasitfy
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+toast.configure();
 
 i18next.init({
   interpolation: { escapeValue: false },
@@ -46,6 +51,17 @@ root.render(
             <Route path="/login" element={<LoginScreen />} />
             <Route path="/signup" element={<SignUpScreen />} />
           </Routes>
+          <ToastContainer
+            position="bottom-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
         </I18nextProvider>
       </AuthProvider>
     </Router>

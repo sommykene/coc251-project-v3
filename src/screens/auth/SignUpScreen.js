@@ -5,8 +5,7 @@ import logo from "../../assets/images/logo.svg";
 import { Spacer } from "../../components/utils";
 import { AddUserToFirestore, CreateUser } from "../../services/auth";
 
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 
 const INITIAL_USER = {
   username: "",
@@ -139,17 +138,6 @@ function SignUpScreen() {
         <Link to="/login" style={{ marginTop: 0, color: color.teal }}>
           Already have an account? Login In
         </Link>
-        <ToastContainer
-          position="bottom-right"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-        />
       </div>
     </div>
   );
