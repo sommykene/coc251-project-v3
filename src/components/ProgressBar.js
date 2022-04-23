@@ -33,6 +33,7 @@ function ProgressBar({ progressState, positionIndex }) {
         {progressState.map((x, i) => {
           return (
             <div
+              key={i}
               style={{
                 height: "15px",
                 backgroundColor:

@@ -18,7 +18,7 @@ function EnglishWordsList({ data }) {
       </div>
       {data.map((vocab, index) => {
         return (
-          <div style={styles.row}>
+          <div key={index} style={styles.row}>
             <div className="card-ns" style={styles.wordCards}>
               <span style={{ padding: "0 20px" }}>{vocab.english}</span>
             </div>
