@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { icon } from "../assets/images";
+import { icon } from "@assets/images";
 
 const useAudio = (url, play) => {
   const [audio] = useState(new Audio(url));

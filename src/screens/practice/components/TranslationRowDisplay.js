@@ -1,6 +1,6 @@
 import React from "react";
-import { color } from "../../../assets/colors/colors";
-import AudioButton from "../../../components/AudioButton";
+import { color } from "@assets/colors/colors";
+import AudioButton from "@components/AudioButton";
 
 function TranslationRowDisplay({ vocab }) {
   return (

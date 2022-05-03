@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import Sidebar from "../../components/Sidebar";
-import BottomColorStrip from "../../components/BottomColorStrip";
+import Sidebar from "@components/Sidebar";
+import BottomColorStrip from "@components/BottomColorStrip";
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
-import { icon } from "../../assets/images";
-import { color } from "../../assets/colors/colors";
-import { Spacer } from "../../components/utils";
+import { icon } from "@assets/images";
+import { color } from "@assets/colors/colors";
+import { Spacer } from "@components/utils";
 import PhrasebookCard from "./components/PhrasebookCard";
-import { getPhrasebooks } from "../../firebaseapi/firestore";
+import { getPhrasebooks } from "@firebaseapi/firestore";
 
 function PhrasebooksHomeScreen() {
   const page = "vocab";

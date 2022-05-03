@@ -1,11 +1,11 @@
 import React from "react";
-import { icon } from "../../../assets/images";
-import BottomColorStrip from "../../../components/BottomColorStrip";
-import LeaveButton from "../../../components/LeaveButton";
-import HomeButton from "../../../components/HomeButton";
-import ProgressBar from "../../../components/ProgressBar";
-import { Spacer } from "../../../components/utils";
-import { color } from "../../../assets/colors/colors";
+import { icon } from "@assets/images";
+import BottomColorStrip from "@components/BottomColorStrip";
+import LeaveButton from "@components/LeaveButton";
+import HomeButton from "@components/HomeButton";
+import ProgressBar from "@components/ProgressBar";
+import { Spacer } from "@components/utils";
+import { color } from "@assets/colors/colors";
 import { useTranslation } from "react-i18next";
 import TranslationRowDisplay from "../components/TranslationRowDisplay";
 

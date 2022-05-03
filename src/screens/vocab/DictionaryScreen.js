@@ -1,14 +1,14 @@
 import React from "react";
-import Sidebar from "../../components/Sidebar";
-import BottomColorStrip from "../../components/BottomColorStrip";
+import Sidebar from "@components/Sidebar";
+import BottomColorStrip from "@components/BottomColorStrip";
 import { useTranslation } from "react-i18next";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { icon } from "../../assets/images";
-import { color } from "../../assets/colors/colors";
-import { Spacer } from "../../components/utils";
+import { icon } from "@assets/images";
+import { color } from "@assets/colors/colors";
+import { Spacer } from "@components/utils";
 import DictionaryWordCard from "./components/DictionaryWordCard";
 import { useEffect, useState } from "react";
-import { APIKey } from "../../config/IgboAPIConfig";
+import { APIKey } from "@config/IgboAPIConfig";
 
 const fetchData = (word, callback) => {
   return fetch(`https://igboapi.com/api/v1/words?keyword=${word}`, {

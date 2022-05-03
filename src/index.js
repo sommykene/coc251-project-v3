@@ -10,13 +10,13 @@ import "./assets/fonts/BalsamiqSans-Regular.ttf";
 // import "./i18n";
 import { I18nextProvider } from "react-i18next";
 import i18next from "i18next";
-import common_en from "./translations/en/common.json";
-import common_ig from "./translations/ig/common.json";
-import common_enig from "./translations/enig/common.json";
-import LoginScreen from "./screens/auth/LoginScreen";
-import SignUpScreen from "./screens/auth/SignUpScreen";
+import common_en from "@translations/en/common.json";
+import common_ig from "@translations/ig/common.json";
+import common_enig from "@translations/enig/common.json";
+import LoginScreen from "@screens/auth/LoginScreen";
+import SignUpScreen from "@screens/auth/SignUpScreen";
 
-import { AuthProvider } from "./services/AuthProvider";
+import { AuthProvider } from "@services/AuthProvider";
 // React Toasitfy
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

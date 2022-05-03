@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { color } from "../../../assets/colors/colors";
-import AudioButton from "../../../components/AudioButton";
-import sound from "../../../assets/sound.wav";
+import { color } from "@assets/colors/colors";
+import AudioButton from "@components/AudioButton";
+import sound from "@assets/sound.wav";
 import useCollapse from "react-collapsed";
-import { icon } from "../../../assets/images";
-import { Spacer } from "../../../components/utils";
-import useAuth from "../../../services/AuthProvider";
-import { updateFavourite } from "../../../firebaseapi/auth";
+import { icon } from "@assets/images";
+import { Spacer } from "@components/utils";
+import useAuth from "@services/AuthProvider";
+import { updateFavourite } from "@firebaseapi/auth";
 
 function VocabCard({ vocab }) {
   const { currentUser } = useAuth();

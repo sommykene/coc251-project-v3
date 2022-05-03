@@ -1,5 +1,5 @@
 import React from "react";
-import { color } from "../../../assets/colors/colors";
+import { color } from "@assets/colors/colors";
 
 function TextDisplay({ text, width }) {
   return (

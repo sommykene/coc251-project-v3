@@ -2,13 +2,13 @@ import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
 
-import ProfileCard from "../../components/ProfileCard";
+import ProfileCard from "@components/ProfileCard";
 import WordOfTheDayCard from "./componenets/WordOfTheDayCard";
 
-import { color } from "../../assets/colors/colors";
+import { color } from "@assets/colors/colors";
 import "./HomeScreen.css";
-import { icon } from "../../assets/images";
-import { AddFiles } from "../../firebaseapi/firestore";
+import { icon } from "@assets/images";
+import { AddFiles } from "@firebaseapi/firestore";
 
 function HomeScreen() {
   const { t, i18n } = useTranslation("common");

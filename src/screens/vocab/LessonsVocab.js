@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
-import Sidebar from "../../components/Sidebar";
-import BottomColorStrip from "../../components/BottomColorStrip";
+import Sidebar from "@components/Sidebar";
+import BottomColorStrip from "@components/BottomColorStrip";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import { icon } from "../../assets/images";
-import { color } from "../../assets/colors/colors";
-import { Spacer } from "../../components/utils";
+import { icon } from "@assets/images";
+import { color } from "@assets/colors/colors";
+import { Spacer } from "@components/utils";
 import VocabCard from "./components/VocabCard";
-import { getAllVocabTillLessonNumber } from "../../firebaseapi/firestore";
-import useAuth from "../../services/AuthProvider";
-import Loading from "../../components/Loading";
+import { getAllVocabTillLessonNumber } from "@firebaseapi/firestore";
+import useAuth from "@services/AuthProvider";
+import Loading from "@components/Loading";
 
 function LessonsVocab() {
   const page = "vocab";
@@ -17,11 +17,13 @@ function LessonsVocab() {
   const navigate = useNavigate();
   const { currentUser } = useAuth();
   const [vocabs, setVocabs] = useState([]);
+  const [fetchLoading, setFetchLoading] = useState(false);
 
   useEffect(() => {
     const getVocabList = async (lessonNumber) => {
       const list = await getAllVocabTillLessonNumber(lessonNumber);
       setVocabs(list);
+      setFetchLoading(true);
     };
 
     getVocabList(currentUser.currentLessonNumber);
@@ -100,6 +102,8 @@ function LessonsVocab() {
             filteredVocab.map((vocab, index) => {
               return <VocabCard key={index} vocab={vocab} />;
             })
+          ) : fetchLoading ? (
+            <h1>No Results Found</h1>
           ) : (
             <Loading />
           )}

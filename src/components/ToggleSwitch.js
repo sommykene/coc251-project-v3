@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { color } from "../assets/colors/colors";
+import { color } from "@assets/colors/colors";
 import "./stylesheet.css";
 
 function ToggleSwitch() {

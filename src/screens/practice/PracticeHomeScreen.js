@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { color } from "../../assets/colors/colors";
-import Sidebar from "../../components/Sidebar";
-import BottomColorStrip from "../../components/BottomColorStrip";
-import { icon } from "../../assets/images";
-import { Spacer } from "../../components/utils";
+import { color } from "@assets/colors/colors";
+import Sidebar from "@components/Sidebar";
+import BottomColorStrip from "@components/BottomColorStrip";
+import { icon } from "@assets/images";
+import { Spacer } from "@components/utils";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { getLessonsTillNumber } from "../../firebaseapi/firestore";
-import useAuth from "../../services/AuthProvider";
+import { getLessonsTillNumber } from "@firebaseapi/firestore";
+import useAuth from "@services/AuthProvider";
 
 function PracticeHomeScreen() {
   const { t, i18n } = useTranslation("common");

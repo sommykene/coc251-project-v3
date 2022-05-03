@@ -1,8 +1,8 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { color } from "../assets/colors/colors";
-import { icon } from "../assets/images";
+import { color } from "@assets/colors/colors";
+import { icon } from "@assets/images";
 
 function LeaveButton({ link }) {
   const { t, i18n } = useTranslation("common");

@@ -1,6 +1,6 @@
 import React from "react";
-import { color } from "../../../assets/colors/colors";
-import { Spacer } from "../../../components/utils";
+import { color } from "@assets/colors/colors";
+import { Spacer } from "@components/utils";
 
 function PhrasebookCard({ name, description, numberOfVocab }) {
   return (

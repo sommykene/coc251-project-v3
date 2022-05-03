@@ -1,9 +1,9 @@
 import { format } from "date-fns";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { color } from "../../../assets/colors/colors";
-import { Spacer } from "../../../components/utils";
-import { getWordOfTheDay } from "../../../firebaseapi/firestore";
+import { color } from "@assets/colors/colors";
+import { Spacer } from "@components/utils";
+import { getWordOfTheDay } from "@firebaseapi/firestore";
 
 function hasOneDayPassed() {
   var date = new Date().toLocaleDateString();

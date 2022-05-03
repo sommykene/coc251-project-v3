@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
-import Sidebar from "../../components/Sidebar";
-import BottomColorStrip from "../../components/BottomColorStrip";
+import Sidebar from "@components/Sidebar";
+import BottomColorStrip from "@components/BottomColorStrip";
 import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { icon } from "../../assets/images";
-import { Spacer } from "../../components/utils";
-import sound from "../../assets/sound.wav";
+import { icon } from "@assets/images";
+import { Spacer } from "@components/utils";
+import sound from "@assets/sound.wav";
 
-import TranslationsGrid from "../../components/TranslationsGrid";
-import { getPhrasebookVocab } from "../../firebaseapi/firestore";
-import { color } from "../../assets/colors/colors";
-import Loading from "../../components/Loading";
+import TranslationsGrid from "@components/TranslationsGrid";
+import { getPhrasebookVocab } from "@firebaseapi/firestore";
+import { color } from "@assets/colors/colors";
+import Loading from "@components/Loading";
 
 const data = [
   { english: "Welcome", igbo: "nnọọ", sound: sound },

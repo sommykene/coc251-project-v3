@@ -1,5 +1,5 @@
 import React from "react";
-import { color } from "../assets/colors/colors";
+import { color } from "@assets/colors/colors";
 
 function BottomColorStrip({ page }) {
   let stripColor = color.background;

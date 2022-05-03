@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { color } from "../../assets/colors/colors";
-import logo from "../../assets/images/logo.svg";
-import { Spacer } from "../../components/utils";
+import { color } from "@assets/colors/colors";
+import logo from "@assets/images/logo.svg";
+import { Spacer } from "@components/utils";
 
-import { Login } from "../../firebaseapi/auth";
+import { Login } from "@firebaseapi/auth";
 
 import { toast } from "react-toastify";
 

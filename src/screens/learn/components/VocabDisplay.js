@@ -1,7 +1,7 @@
 import React from "react";
-import { color } from "../../../assets/colors/colors";
-import AudioButton from "../../../components/AudioButton";
-import sound from "../../../assets/sound.wav";
+import { color } from "@assets/colors/colors";
+import AudioButton from "@components/AudioButton";
+import sound from "@assets/sound.wav";
 
 function VocabDisplay({ vocab }) {
   return (

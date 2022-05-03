@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { color } from "../../assets/colors/colors";
-import BottomColorStrip from "../../components/BottomColorStrip";
-import ImageExpand from "../../components/ImageExpand";
-import Sidebar from "../../components/Sidebar";
-import { getCultureImages } from "../../firebaseapi/storage";
-import Loading from "../../components/Loading";
-import { icon } from "../../assets/images";
+import { color } from "@assets/colors/colors";
+import BottomColorStrip from "@components/BottomColorStrip";
+import ImageExpand from "@components/ImageExpand";
+import Sidebar from "@components/Sidebar";
+import { getCultureImages } from "@firebaseapi/storage";
+import Loading from "@components/Loading";
+import { icon } from "@assets/images";
 
 function CultureHomeScreen() {
   const { t, i18n } = useTranslation("common");

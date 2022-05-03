@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { color } from "../../assets/colors/colors";
-import Sidebar from "../../components/Sidebar";
-import BottomColorStrip from "../../components/BottomColorStrip";
-import { icon } from "../../assets/images";
-import { Spacer } from "../../components/utils";
+import { color } from "@assets/colors/colors";
+import Sidebar from "@components/Sidebar";
+import BottomColorStrip from "@components/BottomColorStrip";
+import { icon } from "@assets/images";
+import { Spacer } from "@components/utils";
 import { Link } from "react-router-dom";
 
 function VocabHomeScreen() {

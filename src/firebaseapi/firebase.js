@@ -4,7 +4,7 @@ import { getAuth } from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
 import { getStorage } from "firebase/storage";
 
-import firebaseConfig from "../config/firebaseconfig";
+import firebaseConfig from "@config/firebaseconfig";
 
 export const app = initializeApp(firebaseConfig);
 

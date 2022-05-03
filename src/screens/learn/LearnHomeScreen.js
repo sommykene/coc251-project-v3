@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { color } from "../../assets/colors/colors";
-import Sidebar from "../../components/Sidebar";
-import { Spacer } from "../../components/utils";
+import { color } from "@assets/colors/colors";
+import Sidebar from "@components/Sidebar";
+import { Spacer } from "@components/utils";
 import TopicCard from "./components/TopicCard";
-import BottomColorStrip from "../../components/BottomColorStrip";
-import useAuth from "../../services/AuthProvider";
-import { getTopics, getUserLevel } from "../../firebaseapi/firestore";
+import BottomColorStrip from "@components/BottomColorStrip";
+import useAuth from "@services/AuthProvider";
+import { getTopics, getUserLevel } from "@firebaseapi/firestore";
 
 function LearnHomeScreen() {
   const { t, i18n } = useTranslation("common");

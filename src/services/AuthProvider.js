@@ -1,7 +1,7 @@
-import { auth } from "../firebaseapi/firebase";
+import { auth } from "@firebaseapi/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { useState, useEffect, useContext, createContext } from "react";
-import { GetUserFromFirestore } from "../firebaseapi/auth";
+import { GetUserFromFirestore } from "@firebaseapi/auth";
 
 const AuthContext = createContext();
 

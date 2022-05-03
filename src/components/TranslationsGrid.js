@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 import AudioButton from "./AudioButton";
-import { color } from "../assets/colors/colors";
+import { color } from "@assets/colors/colors";
 
 function TranslationsGrid({ data, fullWidth }) {
   const row =

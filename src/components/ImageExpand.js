@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { color } from "../assets/colors/colors";
+import { color } from "@assets/colors/colors";
 
 function ImageExpand({ url }) {
   const [isOpen, setIsOpen] = useState(false);

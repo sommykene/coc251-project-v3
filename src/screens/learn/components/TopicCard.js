@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useParams, useSearchParams } from "react-router-dom";
-import { color } from "../../../assets/colors/colors";
+import { color } from "@assets/colors/colors";
 
 function TopicCard({ topicID, title, description }) {
   const { t, i18n } = useTranslation("common");

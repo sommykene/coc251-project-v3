@@ -1,21 +1,20 @@
 import React, { useEffect, useRef, useState } from "react";
-import { icon } from "../../../assets/images";
-import BottomColorStrip from "../../../components/BottomColorStrip";
-import LeaveButton from "../../../components/LeaveButton";
-import HomeButton from "../../../components/HomeButton";
-import ProgressBar from "../../../components/ProgressBar";
-import AudioDisplay from "../components/AudioDisplay";
-import { Spacer } from "../../../components/utils";
-import { color } from "../../../assets/colors/colors";
+import { icon } from "@assets/images";
+import BottomColorStrip from "@components/BottomColorStrip";
+import LeaveButton from "@components/LeaveButton";
+import HomeButton from "@components/HomeButton";
+import ProgressBar from "@components/ProgressBar";
+import { Spacer } from "@components/utils";
+import { color } from "@assets/colors/colors";
+import AudioButton from "@components/AudioButton";
 import { useTranslation } from "react-i18next";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
-import useAuth from "../../../services/AuthProvider";
-import { getLessonVocab } from "../../../firebaseapi/firestore";
+import { useNavigate, useParams } from "react-router-dom";
+import useAuth from "@services/AuthProvider";
+import { getLessonVocab } from "@firebaseapi/firestore";
 import ScoreCard from "./components/ScoreCard";
-import { completePractice } from "../../../firebaseapi/auth";
+import { completePractice } from "@firebaseapi/auth";
 import shuffleArray from "./utils/shuffleArray";
 import IgboLetterButtons from "../components/IgboLetterButtons";
-import AudioButton from "../../../components/AudioButton";
 
 function SpellAudio() {
   const { t, i18n } = useTranslation("common");

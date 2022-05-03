@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import EnglishWordsList from "./components/EnglishWordsList";
-import TranslationGrid from "../../components/TranslationsGrid";
-import { icon } from "../../assets/images";
-import BottomColorStrip from "../../components/BottomColorStrip";
+import TranslationGrid from "@components/TranslationsGrid";
+import { icon } from "@assets/images";
+import BottomColorStrip from "@components/BottomColorStrip";
 import { useTranslation } from "react-i18next";
 import VocabDisplay from "./components/VocabDisplay";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import LeaveButton from "../../components/LeaveButton";
-import HomeButton from "../../components/HomeButton";
-import ProgressBar from "../../components/ProgressBar";
-import { getLessonVocab } from "../../firebaseapi/firestore";
-import { completeLesson } from "../../firebaseapi/auth";
-import useAuth from "../../services/AuthProvider";
+import LeaveButton from "@components/LeaveButton";
+import HomeButton from "@components/HomeButton";
+import ProgressBar from "@components/ProgressBar";
+import { getLessonVocab } from "@firebaseapi/firestore";
+import { completeLesson } from "@firebaseapi/auth";
+import useAuth from "@services/AuthProvider";
 
 function LessonLayoutPage() {
   const [vocabList, setVocabList] = useState([]);

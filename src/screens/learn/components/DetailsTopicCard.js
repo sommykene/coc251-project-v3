@@ -6,8 +6,8 @@ import {
   useParams,
   useSearchParams,
 } from "react-router-dom";
-import { color } from "../../../assets/colors/colors";
-import { getTopicByID } from "../../../firebaseapi/firestore";
+import { color } from "@assets/colors/colors";
+import { getTopicByID } from "@firebaseapi/firestore";
 
 function DetailsTopicCard({ location }) {
   const { t, i18n } = useTranslation("common");

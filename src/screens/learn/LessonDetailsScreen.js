@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { color } from "../../assets/colors/colors";
-import BottomColorStrip from "../../components/BottomColorStrip";
-import { Spacer } from "../../components/utils";
-import Sidebar from "../../components/Sidebar";
+import { color } from "@assets/colors/colors";
+import BottomColorStrip from "@components/BottomColorStrip";
+import { Spacer } from "@components/utils";
+import Sidebar from "@components/Sidebar";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import DetailsTopicCard from "./components/DetailsTopicCard";
 import DetailsLessonNotesCard from "./components/DetailsLessonNotesCard";
 import DetailsLessonCard from "./components/DetailsLessonCard";
-import { icon } from "../../assets/images";
-import { getLessons } from "../../firebaseapi/firestore";
-import useAuth from "../../services/AuthProvider";
+import { icon } from "@assets/images";
+import { getLessons } from "@firebaseapi/firestore";
+import useAuth from "@services/AuthProvider";
 
 function LessonDetailsScreen() {
   const { t, i18n } = useTranslation("common");
