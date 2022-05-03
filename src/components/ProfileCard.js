@@ -75,6 +75,7 @@ const styles = {
     marginBottom: "10px",
     minHeight: "50px",
     maxHeight: "105px",
+    borderRadius: "10px",
   },
   xppoints: {
     backgroundColor: color.yellow,
