@@ -27,6 +27,7 @@ export const AddFiles = () => {
         igbo: x.igbo,
       },
       lessonID: x.lessonID,
+      lessonNumber: x.lessonNumber,
       lessonOrder: x.lessonOrder,
       phrasebookID: x.phrasebookID,
       phrasebookOrder: x.phrasebookOrder,

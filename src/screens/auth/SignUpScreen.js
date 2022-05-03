@@ -42,23 +42,40 @@ function SignUpScreen() {
   };
 
   const handleSubmit = async () => {
-    await CreateUser(userForm)
-      .then((res) => {
-        sessionStorage.setItem("Auth Token", res._tokenResponse.refreshToken);
-        const user = res.user;
-        AddUserToFirestore(
-          user,
-          userForm.email,
-          userForm.firstName,
-          userForm.username
-        );
-        navigate("/");
-      })
-      .catch((error) => {
-        if (error.code === "auth/email-already-in-use") {
-          toast.error("Email Already in Use");
-        }
-      });
+    if (userForm.firstName.length === 0) {
+      toast.error("Please enter your first name");
+    } else if (userForm.username.length === 0) {
+      toast.error("Please enter a username");
+    } else if (userForm.email.length === 0) {
+      toast.error("Please enter a valid email");
+    } else if (userForm.password.length <= 6) {
+      toast.error("Password must be greater than 6 Chars");
+    } else if (userForm.password !== userForm.confirmpassword) {
+      toast.error("Passwords dont match");
+    } else {
+      await CreateUser(userForm)
+        .then((res) => {
+          sessionStorage.setItem("Auth Token", res._tokenResponse.refreshToken);
+          const user = res.user;
+          AddUserToFirestore(
+            user,
+            userForm.email,
+            userForm.firstName,
+            userForm.username
+          );
+          navigate("/");
+        })
+        .catch((error) => {
+          console.log(error);
+          if (error.code === "auth/invalid-email") {
+            toast.error("Please enter a valid email");
+          } else if (error.code === "auth/email-already-in-use") {
+            toast.error("Email Already in Use");
+          } else {
+            toast.error("Error creating account, please try again later");
+          }
+        });
+    }
   };
 
   return (
@@ -99,6 +116,7 @@ function SignUpScreen() {
           placeholder="First Name"
           name="firstName"
           onChange={(e) => handleChange(e)}
+          required
         />
         <Spacer height="10px" />
         <input

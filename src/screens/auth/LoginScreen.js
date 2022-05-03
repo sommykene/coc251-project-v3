@@ -34,19 +34,29 @@ function LoginScreen() {
   };
 
   const handleSubmit = async () => {
-    await Login(userForm)
-      .then((res) => {
-        sessionStorage.setItem("Auth Token", res._tokenResponse.refreshToken);
-        navigate("/");
-      })
-      .catch((error) => {
-        if (error.code === "auth/wrong-password") {
-          toast.error("Please check the Password");
-        }
-        if (error.code === "auth/user-not-found") {
-          toast.error("Please check the Email");
-        }
-      });
+    if (userForm.email.length === 0) {
+      toast.error("Please enter a valid email");
+    } else if (userForm.password.length === 0) {
+      toast.error("Please enter a valid password");
+    } else {
+      await Login(userForm)
+        .then((res) => {
+          sessionStorage.setItem("Auth Token", res._tokenResponse.refreshToken);
+          navigate("/");
+        })
+        .catch((error) => {
+          console.log(error);
+          if (error.code === "auth/invalid-email") {
+            toast.error("Please enter a valid email");
+          } else if (error.code === "auth/wrong-password") {
+            toast.error("Please check the password");
+          } else if (error.code === "auth/user-not-found") {
+            toast.error("Please check the Email");
+          } else {
+            toast.error("Error logging in, please try again later");
+          }
+        });
+    }
   };
 
   return (
