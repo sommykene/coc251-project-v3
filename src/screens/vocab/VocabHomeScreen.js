@@ -19,7 +19,7 @@ function VocabHomeScreen() {
       </div>
 
       {/* MAIN BODY */}
-      <div style={{ flex: 4 }}>
+      <div style={{ flex: 4, paddingBottom: "50px" }}>
         <span className="pagetitle balsamiq-ig">{t("vocab")}</span>
         <div style={styles.main}>
           {/* lessons vocab */}

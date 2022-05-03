@@ -5,7 +5,6 @@ import BottomColorStrip from "../../components/BottomColorStrip";
 import { Spacer } from "../../components/utils";
 import Sidebar from "../../components/Sidebar";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
-import { lessonsData } from "../../data/lessonsData";
 import DetailsTopicCard from "./components/DetailsTopicCard";
 import DetailsLessonNotesCard from "./components/DetailsLessonNotesCard";
 import DetailsLessonCard from "./components/DetailsLessonCard";
@@ -32,10 +31,6 @@ function LessonDetailsScreen() {
     getTopicLessons(params.topicid);
   }, []);
 
-  const lesson = lessonsData.find((lesson) => {
-    return lesson.topicid === params.topicid;
-  });
-
   return (
     <div style={{ display: "flex", gap: "30px" }}>
       <div style={{ flex: 1 }}>
@@ -45,7 +40,7 @@ function LessonDetailsScreen() {
       </div>
 
       {/* MAIN BODY */}
-      <div style={{ flex: 4 }}>
+      <div style={{ flex: 4, paddingBottom: "50px" }}>
         <div style={styles.main}>
           <div>
             <img

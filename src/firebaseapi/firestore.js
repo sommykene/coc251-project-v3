@@ -4,7 +4,6 @@ import {
   getDocs,
   where,
   query,
-  FieldPath,
   getDoc,
   doc,
   orderBy,
@@ -12,29 +11,7 @@ import {
 } from "firebase/firestore";
 import { db } from "./firebase";
 
-import { VocabData } from "../data/VocabData";
 import { getVocabSound } from "./storage";
-
-export const AddFiles = () => {
-  console.log("Added");
-  VocabData.forEach(async (x) => {
-    const docRef = await addDoc(collection(db, "vocabs"), {
-      english: x.english,
-      igbo: x.igbo,
-      definition: x.definition,
-      examples: {
-        english: x.english,
-        igbo: x.igbo,
-      },
-      lessonID: x.lessonID,
-      lessonNumber: x.lessonNumber,
-      lessonOrder: x.lessonOrder,
-      phrasebookID: x.phrasebookID,
-      phrasebookOrder: x.phrasebookOrder,
-      random: x.random,
-    });
-  });
-};
 
 // LEVELS
 export const getUserLevel = async (levelID) => {

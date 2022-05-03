@@ -5,7 +5,6 @@ import Sidebar from "../../components/Sidebar";
 import { Spacer } from "../../components/utils";
 import TopicCard from "./components/TopicCard";
 import BottomColorStrip from "../../components/BottomColorStrip";
-import { lessonsData } from "../../data/lessonsData";
 import useAuth from "../../services/AuthProvider";
 import { getTopics, getUserLevel } from "../../firebaseapi/firestore";
 
@@ -39,7 +38,7 @@ function LearnHomeScreen() {
       </div>
 
       {/* MAIN BODY */}
-      <div style={{ flex: 4 }}>
+      <div style={{ flex: 4, paddingBottom: "50px" }}>
         <div style={styles.main}>
           <div>
             <span className="pagetitle balsamiq-ig">{t("igbolessons")}</span>
@@ -51,6 +50,12 @@ function LearnHomeScreen() {
             Level: {levelName}
           </span>
         </div>
+        <p
+          className="balsamiq-ig"
+          style={{ fontStyle: "italic", color: color.darkgrey }}
+        >
+          All lessons are taught in Central Igbo
+        </p>
         <div style={styles.content}>
           {topicsList.map((topic) => {
             return (

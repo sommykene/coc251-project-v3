@@ -61,7 +61,7 @@ function PhrasebookExpanded() {
       </div>
 
       {/* MAIN BODY */}
-      <div style={{ flex: 4 }}>
+      <div style={{ flex: 4, paddingBottom: "50px" }}>
         <div>
           <img
             style={{ marginRight: "10px", cursor: "pointer" }}

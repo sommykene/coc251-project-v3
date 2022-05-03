@@ -41,6 +41,7 @@ i18next.init({
 
 const container = document.getElementById("root");
 const root = createRoot(container);
+
 root.render(
   <Router>
     <AuthProvider>

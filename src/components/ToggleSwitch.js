@@ -12,7 +12,6 @@ function ToggleSwitch() {
   }, []);
 
   const handleLanguageChange = (lang) => {
-    // const lang = e.target.value;
     setLanguage(lang);
     i18n.changeLanguage(lang);
   };
